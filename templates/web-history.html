@@ -1,197 +1,315 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>History of the Web</title>
-</head>
+{% extends "base.html" %}
 
-<body>
+{% block title %}
+History of the World Wide Web
+{% endblock %}
+
+{% block content %}
 
 <header>
     <h1>History of the World Wide Web</h1>
 
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/internet-history">Internet</a> |
-        <a href="/web-history">Web</a>
-    </nav>
+    <p>
+        The World Wide Web is a system that allows people to access
+        and share information through the Internet.
+    </p>
 </header>
 
-<main>
+<nav>
+    <h2>Page Navigation</h2>
 
-<section>
+    <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#timeline">Web Timeline</a></li>
+        <li><a href="#technologies">Key Web Technologies</a></li>
+        <li><a href="#web-today">The Web Today</a></li>
+        <li><a href="#references">References</a></li>
+    </ul>
+</nav>
+
+<section id="introduction">
+
     <h2>Introduction</h2>
+
     <p>
-        The World Wide Web was created by Tim Berners-Lee at CERN.
-        It allows people to access and connect information using
-        technologies such as HTML, HTTP and URLs.
+        The World Wide Web was created by Tim Berners-Lee while
+        working at CERN. He proposed the idea in 1989 to make it
+        easier for researchers to share information.
     </p>
 
     <p>
-        The Web is different from the Internet. The Internet is the
-        network, while the Web is a service that uses the Internet.
+        The Web is not the same as the Internet. The Internet is the
+        network that connects computers, while the Web is a service
+        that uses this network to provide websites and information.
     </p>
+
 </section>
 
-<section>
+<section id="timeline">
+
     <h2>Web Timeline</h2>
 
     <article>
-        <h3>1989 : Web Proposal</h3>
+        <h3>1989 — Web Proposal</h3>
+
         <p>
             Tim Berners-Lee proposed a system for sharing information
-            using hypertext at CERN.
+            between researchers at CERN using hypertext and links.
         </p>
-        <p>
-            <strong>Source:</strong>
-            <a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/">
-                CERN
-            </a>
-        </p>
-    </article>
 
-    <article>
-        <h3>1990 : First Web Browser and Server</h3>
         <p>
-            Tim Berners-Lee created the first Web server and the first
-            browser, called WorldWideWeb.
-        </p>
-        <p>
-            <strong>Source:</strong>
-            <a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/">
-                CERN
-            </a>
-        </p>
-    </article>
-
-    <article>
-        <h3>1991 : First Website</h3>
-        <p>
-            The first website was created at CERN at info.cern.ch.
-            It explained the World Wide Web.
-        </p>
-        <p>
-            <strong>Source:</strong>
-            <a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/">
-                CERN
-            </a>
-        </p>
-    </article>
-
-    <article>
-        <h3>1993 : Mosaic Browser</h3>
-        <p>
-            The Mosaic browser was released by NCSA. It helped make
-            Web browsing easier and contributed to the growth of the Web.
-        </p>
-        <p>
-            <strong>Source:</strong>
-            <a href="https://www.computerhistory.org/timeline/1993/">
-                Computer History Museum
-            </a>
-        </p>
-    </article>
-
-    <article>
-        <h3>1993 : Web Software Becomes Free</h3>
-        <p>
-            CERN released the Web software freely. This helped other
-            people and organizations use and develop the Web.
-        </p>
-        <p>
-            <strong>Source:</strong>
-            <a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/">
-                CERN
-            </a>
-        </p>
-    </article>
-
-    <article>
-        <h3>1994 : W3C</h3>
-        <p>
-            Tim Berners-Lee established the World Wide Web Consortium (W3C).
-            It helps develop Web standards.
-        </p>
-        <p>
-            <strong>Source:</strong>
-            <a href="https://www.w3.org/about/history/">
+            Source:
+            <a href="https://www.w3.org/History/1989/proposal.html"
+               target="_blank">
                 W3C
             </a>
         </p>
     </article>
 
     <article>
-        <h3>1997 : HTML 3.2</h3>
+        <h3>1990 — First Browser and Server</h3>
+
         <p>
-            HTML 3.2 became a W3C Recommendation and helped standardize
-            common HTML features.
+            Berners-Lee developed the first Web browser and Web server.
+            He also worked on the basic technologies needed for the Web.
         </p>
+
         <p>
-            <strong>Source:</strong>
-            <a href="https://www.w3.org/TR/html401/intro/intro.html">
+            Source:
+            <a href="https://home.cern/science/computing/the-birth-of-the-web/"
+               target="_blank">
+                CERN
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>1991 — First Website</h3>
+
+        <p>
+            The first website was created at CERN. It explained the
+            World Wide Web project and how people could use it.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://info.cern.ch/"
+               target="_blank">
+                CERN
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>1993 — Web Growth</h3>
+
+        <p>
+            Graphical browsers such as Mosaic helped make the Web
+            easier to use. In the same year, CERN released the Web
+            software into the public domain, helping it spread.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://home.cern/science/computing/the-birth-of-the-web/"
+               target="_blank">
+                CERN
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>1994 — W3C Founded</h3>
+
+        <p>
+            Tim Berners-Lee founded the World Wide Web Consortium
+            (W3C). It works on Web standards that help different
+            browsers and websites work together.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.w3.org/about/history/"
+               target="_blank">
                 W3C
             </a>
         </p>
+    </article>
+
+    <article>
+        <h3>1990s — The Web Becomes Popular</h3>
+
+        <p>
+            During the 1990s, more businesses, universities, and
+            individuals started creating websites. Images, forms,
+            and other features made websites more useful and
+            interesting.
+        </p>
+    </article>
+
+    <article>
+        <h3>2000s — More Interactive Websites</h3>
+
+        <p>
+            Websites became more interactive during the 2000s.
+            CSS improved page design, while JavaScript allowed
+            websites to respond to user actions.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://developer.mozilla.org/en-US/docs/Web"
+               target="_blank">
+                MDN Web Docs
+            </a>
+        </p>
+    </article>
+
+    <article>
+        <h3>2010s — Mobile Web</h3>
+
+        <p>
+            Smartphones and tablets changed the way people used
+            the Web. Websites started using responsive design so
+            that they could work on different screen sizes.
+        </p>
+
+        <p>
+            Web applications also became much more common.
+        </p>
+    </article>
+
+    <article>
+        <h3>2020s — The Modern Web</h3>
+
+        <p>
+            Today, websites can do much more than display information.
+            People use the Web for communication, education, shopping,
+            entertainment, work, and many online services.
+        </p>
+
+        <p>
+            Modern Web technologies also allow websites to behave
+            more like applications and interact with different
+            online services.
+        </p>
+
     </article>
 
 </section>
 
-<section>
+<section id="technologies">
+
     <h2>Key Web Technologies</h2>
 
     <article>
         <h3>HTML</h3>
+
         <p>
-            HTML is used to structure content on Web pages.
+            HTML gives a Web page its structure. It is used for
+            headings, paragraphs, links, images, lists, and other
+            page elements.
         </p>
     </article>
 
     <article>
         <h3>HTTP</h3>
+
         <p>
-            HTTP allows Web browsers and servers to communicate.
+            HTTP is used for communication between a Web browser
+            and a Web server.
         </p>
     </article>
 
     <article>
-        <h3>URL</h3>
+        <h3>URLs</h3>
+
         <p>
-            A URL identifies the location of a resource on the Web.
+            A URL identifies the location of a resource on the Web,
+            such as a Web page or an image.
         </p>
     </article>
+
+    <article>
+        <h3>CSS</h3>
+
+        <p>
+            CSS controls the appearance and layout of Web pages,
+            including fonts, spacing, and positioning.
+        </p>
+    </article>
+
+    <article>
+        <h3>JavaScript</h3>
+
+        <p>
+            JavaScript adds interaction to websites. It can respond
+            to user actions and change content on a page.
+        </p>
+    </article>
+
 </section>
 
-<section>
+<section id="web-today">
+
+    <h2>The Web Today</h2>
+
+    <p>
+        The Web has changed a lot since the first website was
+        created. Early websites were simple, but today's websites
+        can include videos, maps, online applications, and many
+        interactive features.
+    </p>
+
+    <p>
+        Even with all these changes, the basic idea is still the
+        same: people can publish information and connect it through
+        links using common Web technologies.
+    </p>
+
+</section>
+
+<section id="references">
+
     <h2>References</h2>
+
     <ul>
         <li>
-            <a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/">
-                CERN — A Short History of the Web
+            <a href="https://home.cern/science/computing/the-birth-of-the-web/"
+               target="_blank">
+                CERN — The Birth of the Web
             </a>
         </li>
+
         <li>
-            <a href="https://www.w3.org/about/history/">
+            <a href="https://info.cern.ch/"
+               target="_blank">
+                CERN — The First Website
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.w3.org/about/history/"
+               target="_blank">
                 W3C — History
             </a>
         </li>
+
         <li>
-            <a href="https://www.computerhistory.org/timeline/1993/">
-                Computer History Museum
+            <a href="https://www.w3.org/TR/REC-html32"
+               target="_blank">
+                W3C — HTML 3.2
             </a>
         </li>
+
         <li>
-            <a href="https://www.w3.org/TR/html401/intro/intro.html">
-                W3C — HTML
+            <a href="https://developer.mozilla.org/en-US/docs/Web"
+               target="_blank">
+                MDN Web Docs — Web Technologies
             </a>
         </li>
     </ul>
+
 </section>
 
-</main>
-
-<footer>
-    <p>Created for educational purposes — GIN446.</p>
-</footer>
-
-</body>
-</html>
+{% endblock %}

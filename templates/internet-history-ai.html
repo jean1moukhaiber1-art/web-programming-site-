@@ -1,26 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of the Internet</title>
-</head>
+{% extends "base.html" %}
 
-<body>
+{% block title %}
+History of the Internet — AI Version
+{% endblock %}
+
+{% block content %}
 
 <header>
     <h1>History of the Internet</h1>
+
     <p>
-        The history of the Internet is the history of the development of
-        computer networks, packet switching, communication protocols, and
-        interconnected networks.
+        The history of the Internet is the history of the development
+        of computer networks, packet switching, communication protocols,
+        and interconnected networks.
     </p>
 </header>
 
 <nav>
-    <h2>Navigation</h2>
+    <h2>Page Navigation</h2>
+
     <ul>
-        <li><a href="/">Home</a></li>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#timeline">Timeline</a></li>
         <li><a href="#development">Major Developments</a></li>
@@ -28,448 +27,758 @@
     </ul>
 </nav>
 
-<main>
 
-    <section id="introduction">
+<section id="introduction">
+
+    <header>
         <h2>Introduction</h2>
+    </header>
+
+    <article>
+        <h3>What is the Internet?</h3>
 
         <p>
-            The Internet did not appear as one single invention. It developed
-            over several decades through research in computer networking,
-            packet switching, communication protocols, and the connection of
-            different networks.
+            The Internet is a global system of interconnected computer
+            networks that communicate using standardized protocols,
+            particularly the Internet Protocol (IP) and the Transmission
+            Control Protocol (TCP). It allows computers and other devices
+            on different networks to exchange data and provide services
+            such as email, file transfer, remote access, and many other
+            applications.
         </p>
 
         <p>
-            During the 1960s, researchers investigated how computers could
-            communicate through packet-switched networks. These ideas
-            contributed to the development of ARPANET, one of the most
-            important early computer networks.
+            The Internet did not appear as a single invention. It developed
+            gradually through research in computer networking, packet
+            switching, communication protocols, network infrastructure,
+            and the interconnection of independent networks.
         </p>
 
         <p>
-            Later, researchers developed protocols that allowed different
-            networks to communicate with one another. The development and
-            adoption of TCP/IP became an important foundation of the modern
+            One of the most important predecessors of today's Internet was
+            the ARPANET, a research network funded by the Advanced Research
+            Projects Agency of the U.S. Department of Defense. In 1969,
+            ARPANET began operating with four initial nodes. It provided an
+            important experimental environment for connecting computers
+            over long distances and sharing computing resources.
+        </p>
+
+        <p>
+            During the 1970s, researchers worked on a way to connect
+            different packet-switched networks. This work led to the
+            development of TCP/IP, a family of communication protocols
+            designed to allow different networks to communicate with one
+            another. On January 1, 1983, ARPANET completed its transition
+            from the older Network Control Protocol (NCP) to TCP/IP.
+        </p>
+
+        <p>
+            During the 1980s, networks such as NSFNET helped expand
+            Internet connectivity among universities and research
+            institutions. The Internet then increasingly moved beyond its
+            original research environment and became an international
+            infrastructure. The retirement of the NSFNET backbone in 1995
+            accompanied the transition toward a more commercial Internet.
+        </p>
+
+        <p>
+            It is important to distinguish the Internet from the World Wide
+            Web. The Internet is the underlying network infrastructure and
+            protocols that connect networks and devices. The World Wide Web
+            is a service that operates on top of the Internet. The Web was
+            developed later by Tim Berners-Lee at CERN and introduced
+            technologies such as HTML, HTTP, and URLs.
+        </p>
+
+        <p>
+            Since the 1990s, the Internet has expanded from a research and
+            academic network into a global communication infrastructure.
+            Broadband, Wi-Fi, mobile networks, smartphones, cloud
+            computing, content delivery systems, and newer mobile
+            technologies have changed how people access and use Internet
+            services.
+        </p>
+
+        <p>
+            According to the International Telecommunication Union (ITU),
+            approximately 6 billion people, or about 74 percent of the
+            world's population, were using the Internet in 2025. At the
+            same time, approximately 2.2 billion people remained offline,
+            showing that global Internet access continues to expand while
+            differences in availability, affordability, quality, and
+            digital skills remain.
+        </p>
+    </article>
+
+</section>
+
+
+<section id="timeline">
+
+    <header>
+        <h2>Timeline of the Internet</h2>
+        <p>
+            The following timeline presents major milestones in the
+            development of the Internet, from early networking research
+            to modern global connectivity.
+        </p>
+    </header>
+
+
+    <article>
+        <header>
+            <h3>1960s — Foundations of Packet-Switched Networking</h3>
+        </header>
+
+        <p>
+            During the 1960s, researchers investigated new ways of
+            communicating data between computers. A major development was
+            packet switching, in which information is divided into smaller
+            packets that can travel through a network and later be
+            reassembled at the destination.
+        </p>
+
+        <p>
+            Research related to packet switching was conducted independently
+            by several groups, including researchers associated with RAND,
+            MIT, and the UK's National Physical Laboratory (NPL).
+            These developments established important technical foundations
+            for later computer networks.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>1969 — ARPANET Begins</h3>
+        </header>
+
+        <p>
+            In 1969, ARPANET became operational with four initial nodes.
+            They were located at UCLA, the Stanford Research Institute
+            (SRI), UC Santa Barbara, and the University of Utah.
+        </p>
+
+        <p>
+            ARPANET became an important experimental network for connecting
+            geographically separated computers and sharing computing
+            resources. It is widely recognized as a major predecessor of
+            the modern Internet.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>1970 — Network Control Protocol</h3>
+        </header>
+
+        <p>
+            The Network Working Group developed the Network Control Protocol
+            (NCP), which became the main host-to-host protocol used by
+            ARPANET during the early 1970s.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>1971–1972 — Email and Public Demonstration</h3>
+        </header>
+
+        <p>
+            Electronic mail became one of the earliest important network
+            applications. In 1971, Ray Tomlinson developed an email system
+            for ARPANET and introduced the use of the @ symbol to separate
+            the user's name from the destination computer.
+        </p>
+
+        <p>
+            In 1972, ARPANET was publicly demonstrated at the International
+            Computer Communication Conference. Email quickly became one of
+            the network's most widely used applications.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>1973–1974 — Development of TCP/IP Concepts</h3>
+        </header>
+
+        <p>
+            Researchers Robert Kahn and Vinton Cerf worked on the problem of
+            connecting different packet-switched networks. Their work
+            contributed to the development of the protocols that eventually
+            became known as TCP/IP.
+        </p>
+
+        <p>
+            The goal was to create an architecture in which independent
+            networks could communicate without requiring every network to
+            use the same internal technology.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>1977 — Internetting Demonstration</h3>
+        </header>
+
+        <p>
+            TCP/IP technology was demonstrated across different types of
+            networks. These experiments helped demonstrate the feasibility
+            of connecting multiple independent networks into an
+            interconnected system.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>1983 — TCP/IP Becomes the ARPANET Standard</h3>
+        </header>
+
+        <p>
+            January 1, 1983 marked a major milestone. ARPANET completed its
+            transition from NCP to TCP/IP.
+        </p>
+
+        <p>
+            TCP/IP provided a standardized method for addressing,
+            transporting, and routing information between different
+            networks. This helped establish the technical foundation of
+            the Internet as a network of interconnected networks.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>1983–1984 — Domain Name System</h3>
+        </header>
+
+        <p>
+            As networks became larger, remembering numerical IP addresses
+            became increasingly difficult. The Domain Name System (DNS)
+            was developed to provide a distributed system for associating
+            human-readable domain names with network addresses.
+        </p>
+
+        <p>
+            Paul Mockapetris developed the early DNS specifications in
+            1983, with the system subsequently standardized through
+            additional RFC documents.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>1986 — NSFNET Expands Academic Networking</h3>
+        </header>
+
+        <p>
+            The U.S. National Science Foundation launched NSFNET in 1986
+            to connect researchers to supercomputing centers and support
+            academic networking.
+        </p>
+
+        <p>
+            NSFNET became an important backbone for the expanding Internet
+            and helped connect universities and research organizations.
+            Its infrastructure and the networks connected to it contributed
+            significantly to the growth of Internet connectivity.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>1989–1990 — ARPANET Is Retired</h3>
+        </header>
+
+        <p>
+            By the end of the 1980s, the Internet had expanded beyond the
+            original ARPANET environment. ARPANET was eventually
+            decommissioned as its functions became part of the much larger
+            network of interconnected networks.
+        </p>
+
+        <p>
+            DARPA identifies 1989 as the end of ARPANET, while the Internet
+            Society's historical account states that ARPANET was finally
+            decommissioned in 1990. The important historical point is that
+            the Internet had already developed into a broader system that
+            no longer depended on ARPANET as its central network.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>1990s — Commercialization and Global Expansion</h3>
+        </header>
+
+        <p>
+            During the 1990s, Internet access expanded rapidly beyond
+            research and education. Commercial Internet service providers
+            began offering connectivity to businesses and individual users.
+        </p>
+
+        <p>
+            In 1995, NSF decommissioned the NSFNET backbone as commercial
+            Internet infrastructure had become sufficiently developed.
+            This period marked an important transition toward the
+            commercially operated Internet used today.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>1990s — Growth of Web-Based Internet Use</h3>
+        </header>
+
+        <p>
+            During the 1990s, the Internet became much easier for ordinary
+            users to access. Web browsers, search engines, email services,
+            online businesses, and other Internet applications contributed
+            to rapid growth.
+        </p>
+
+        <p>
+            The World Wide Web was one of several important applications
+            running over the Internet. It should therefore be understood
+            as a service built on the Internet rather than as the Internet
+            itself.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>2000s — Broadband and Wireless Internet</h3>
+        </header>
+
+        <p>
+            During the 2000s, broadband connections increasingly replaced
+            slower dial-up connections in many markets. Faster connections
+            made it easier to use multimedia, online services, video,
+            communication platforms, and other data-intensive applications.
+        </p>
+
+        <p>
+            Wi-Fi and expanding mobile networks also made Internet access
+            less dependent on a fixed desktop computer.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>2007–2010s — Smartphones and Mobile Internet</h3>
+        </header>
+
+        <p>
+            The widespread adoption of smartphones transformed Internet
+            access. Mobile devices combined computing, communication,
+            cameras, applications, and Internet connectivity in a single
+            portable device.
+        </p>
+
+        <p>
+            Mobile broadband allowed users to access Internet services from
+            many locations rather than relying exclusively on fixed
+            connections.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>2010s — Cloud Computing and Large-Scale Online Services</h3>
+        </header>
+
+        <p>
+            Cloud computing became an important part of modern Internet
+            infrastructure. Instead of storing and processing everything
+            locally, organizations and users could access computing,
+            storage, databases, and applications through networked data
+            centers.
+        </p>
+
+        <p>
+            Content delivery networks and large-scale data centers also
+            helped deliver online services to users around the world.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>2020s — 5G, Cloud Services, AI and Continued Connectivity</h3>
+        </header>
+
+        <p>
+            During the 2020s, Internet infrastructure continued to evolve
+            through faster mobile networks, fiber broadband, cloud
+            computing, edge computing, Internet of Things devices, and
+            artificial intelligence applications.
+        </p>
+
+        <p>
+            According to ITU estimates, approximately 6 billion people,
+            representing about 74 percent of the world's population, used
+            the Internet in 2025. ITU also reported that approximately
+            2.2 billion people remained offline, showing that global
+            connectivity is still developing.
+        </p>
+
+        <p>
+            ITU's 2025 data also reported that 5G reached more than half
+            of the world's population, while differences in affordability,
+            quality, infrastructure, and digital skills continued to affect
+            Internet access.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>Today — A Global Network of Networks</h3>
+        </header>
+
+        <p>
+            Today, the Internet is a global network of interconnected
+            networks supporting communication, education, research,
+            commerce, entertainment, cloud services, online collaboration,
+            and many other applications.
+        </p>
+
+        <p>
+            The Internet continues to evolve. Its development is no longer
+            based on a single network such as ARPANET, but on cooperation
+            between many networks, organizations, technologies, standards,
+            service providers, data centers, and communication systems.
+        </p>
+    </article>
+
+</section>
+
+
+<section id="development">
+
+    <header>
+        <h2>Three Major Developments and Key Technologies</h2>
+        <p>
+            Several technologies were essential to the development and
+            expansion of the Internet. Three particularly important
+            developments are packet switching, TCP/IP, and DNS.
+        </p>
+    </header>
+
+
+    <article>
+        <header>
+            <h3>1. Packet Switching</h3>
+        </header>
+
+        <p>
+            Packet switching is a method of transmitting digital information
+            by dividing data into smaller units called packets. These
+            packets can travel through a network and are reassembled at
+            their destination.
+        </p>
+
+        <p>
+            Packet switching was fundamental to early computer-networking
+            research and to the development of ARPANET. It provided a
+            different approach from traditional circuit-switched
+            communication because network resources could be shared among
+            different transmissions.
+        </p>
+
+        <p>
+            Research into packet switching was carried out independently
+            by several groups during the 1960s, including researchers at
+            RAND, MIT, and the UK's National Physical Laboratory.
+        </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>2. TCP/IP</h3>
+        </header>
+
+        <p>
+            TCP/IP is a family of communication protocols that provides
+            the fundamental communication architecture of the Internet.
+        </p>
+
+        <p>
+            Internet Protocol (IP) is responsible for addressing and
+            forwarding packets between networks. Transmission Control
+            Protocol (TCP) provides reliable, ordered delivery of data
+            between applications when that service is required.
+        </p>
+
+        <p>
+            The development of TCP/IP made it possible to connect
+            independent packet-switched networks while allowing those
+            networks to maintain their own internal technologies.
+        </p>
+
+        <p>
+            The transition of ARPANET from NCP to TCP/IP on January 1,
+            1983 was a major milestone in the development of the modern
             Internet.
         </p>
+    </article>
+
+
+    <article>
+        <header>
+            <h3>3. Domain Name System (DNS)</h3>
+        </header>
 
         <p>
-            The World Wide Web appeared much later. It is important to
-            distinguish the Internet from the Web: the Internet is the
-            underlying network infrastructure, while the Web is a system of
-            information and services that operates on top of the Internet.
+            The Domain Name System, or DNS, provides a distributed naming
+            system for Internet resources. It allows users to use
+            human-readable domain names rather than having to remember
+            numerical IP addresses.
         </p>
-    </section>
 
-    <section id="timeline">
-        <h2>Internet Timeline</h2>
+        <p>
+            For example, a domain name can be associated with an IP address
+            through DNS. When a user enters a domain name, DNS systems help
+            locate the corresponding network address.
+        </p>
 
-        <article>
-            <h3><time datetime="1961">1961</time> — Packet-Switching Research</h3>
+        <p>
+            Paul Mockapetris developed the original DNS specifications in
+            1983. The system was subsequently refined and standardized
+            through later Internet standards.
+        </p>
 
-            <p>
-                Leonard Kleinrock published important research on packet
-                switching. The idea was that information could be divided
-                into smaller packets that could travel through a network and
-                later be reassembled.
-            </p>
+        <p>
+            DNS became particularly important as the Internet expanded
+            from a relatively small research network into a large global
+            network containing many independently operated networks and
+            hosts.
+        </p>
+    </article>
 
-            <p>
-                Packet switching became an important technical idea for the
-                development of computer networks.
-            </p>
-        </article>
+</section>
 
-        <article>
-            <h3><time datetime="1962">1962</time> — Licklider's Network Vision</h3>
 
-            <p>
-                J.C.R. Licklider promoted the idea of interconnected computers
-                that could allow people and computers to communicate and share
-                information.
-            </p>
+<section id="references">
 
-            <p>
-                His ideas helped influence later research into large-scale
-                computer networking.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1965">1965</time> — Wide-Area Networking Experiment</h3>
-
-            <p>
-                Researchers conducted an experiment connecting computers over
-                a wide geographical area. This work demonstrated important
-                possibilities and difficulties involved in computer
-                communication over long distances.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1967">1967</time> — ARPANET Plan</h3>
-
-            <p>
-                Research supported by ARPA developed into plans for a new
-                packet-switched network. This network would become known as
-                ARPANET.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1968">1968</time> — Interface Message Processors</h3>
-
-            <p>
-                Interface Message Processors, known as IMPs, were developed
-                to connect computers to the ARPANET. They played an important
-                role in moving packets between network nodes.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1969-10-29">29 October 1969</time> —
-                First ARPANET Message</h3>
-
-            <p>
-                The first ARPANET host-to-host connection was demonstrated
-                between UCLA and the Stanford Research Institute.
-            </p>
-
-            <p>
-                The first attempted message was "LOGIN", but the system
-                initially transmitted only "LO" before the receiving system
-                crashed.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1969-12">December 1969</time> —
-                Four ARPANET Nodes</h3>
-
-            <p>
-                By the end of 1969, ARPANET had four initial nodes:
-                UCLA, Stanford Research Institute, UC Santa Barbara,
-                and the University of Utah.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1970">1970</time> — Network Control Protocol</h3>
-
-            <p>
-                The Network Working Group completed the initial ARPANET
-                host-to-host protocol known as Network Control Protocol,
-                or NCP.
-            </p>
-
-            <p>
-                NCP allowed computers connected to ARPANET to communicate
-                using a common protocol.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1972">1972</time> — Email and Public ARPANET Demonstration</h3>
-
-            <p>
-                ARPANET was publicly demonstrated, helping show that
-                packet-switched networking could support useful computer
-                communication.
-            </p>
-
-            <p>
-                Electronic mail also became an important application of
-                ARPANET. Ray Tomlinson developed a system for sending email
-                between computers and used the @ symbol to separate the user
-                name from the host name.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1973">1973</time> — Internetworking Research</h3>
-
-            <p>
-                Researchers began working on ways to connect different types
-                of packet-switched networks. This research became known as
-                the Internetting project.
-            </p>
-
-            <p>
-                The goal was to allow different networks to communicate
-                without requiring every network to use the same internal
-                technology.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1974">1974</time> — TCP Concepts</h3>
-
-            <p>
-                Vint Cerf and Robert Kahn published important work describing
-                a protocol for communication between different packet
-                networks.
-            </p>
-
-            <p>
-                This work contributed to the development of TCP/IP, which
-                became one of the fundamental protocol suites of the Internet.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1977">1977</time> — Internetting Demonstration</h3>
-
-            <p>
-                A major demonstration connected different networks,
-                including ARPANET, packet radio and satellite networks.
-            </p>
-
-            <p>
-                The demonstration showed that different networks could
-                communicate using the developing Internet protocols.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1983-01-01">1 January 1983</time> —
-                TCP/IP Becomes the ARPANET Standard</h3>
-
-            <p>
-                ARPANET officially transitioned from NCP to TCP/IP.
-                This was a major step in the development of the Internet
-                because TCP/IP was designed to support communication between
-                multiple interconnected networks.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1983">1983</time> — ARPANET and MILNET</h3>
-
-            <p>
-                The military portion of the network was separated into
-                MILNET, while ARPANET continued to support research
-                activities.
-            </p>
-
-            <p>
-                TCP/IP provided an important common protocol for the
-                interconnected networks.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1983">1983</time> — Domain Name System</h3>
-
-            <p>
-                The Domain Name System, or DNS, was developed to make it
-                easier to use names for Internet hosts instead of relying
-                only on numerical addresses.
-            </p>
-
-            <p>
-                DNS became an important part of how users locate services
-                and computers on the Internet.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1985">1985</time> — NSFNET Development</h3>
-
-            <p>
-                The National Science Foundation began developing NSFNET to
-                support communication between research and educational
-                institutions.
-            </p>
-
-            <p>
-                NSFNET later became an important part of the Internet's
-                growing backbone infrastructure.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1986">1986</time> — NSFNET Expands</h3>
-
-            <p>
-                NSFNET became an important high-speed network connecting
-                research institutions and helping the Internet expand beyond
-                its earlier research and military communities.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1989">1989</time> —
-                ARPANET Retirement Begins</h3>
-
-            <p>
-                By the end of the 1980s, the Internet had developed into a
-                much larger collection of interconnected networks. ARPANET
-                was no longer the central network it had once been.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1990">1990</time> —
-                ARPANET Is Decommissioned</h3>
-
-            <p>
-                ARPANET was finally decommissioned as the larger Internet
-                infrastructure continued to grow.
-            </p>
-
-            <p>
-                This marked the end of the original ARPANET experiment, but
-                the networking technologies developed through it continued
-                to form part of the Internet.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1990">1990s</time> —
-                Internet Expansion</h3>
-
-            <p>
-                During the 1990s, the Internet expanded rapidly into
-                universities, businesses and eventually homes.
-            </p>
-
-            <p>
-                Commercial Internet services became increasingly important,
-                while the World Wide Web made Internet information easier
-                for ordinary users to access.
-            </p>
-        </article>
-    </section>
-
-    <section id="development">
-        <h2>Major Developments</h2>
-
-        <article>
-            <h3>Packet Switching</h3>
-
-            <p>
-                Packet switching allowed information to be divided into
-                packets that could travel through a network. This approach
-                became fundamental to the development of modern computer
-                networking.
-            </p>
-        </article>
-
-        <article>
-            <h3>ARPANET</h3>
-
-            <p>
-                ARPANET was one of the most important early packet-switched
-                networks. It provided an environment for researchers to
-                develop and test networking technologies.
-            </p>
-        </article>
-
-        <article>
-            <h3>TCP/IP</h3>
-
-            <p>
-                TCP/IP provided a way for different networks to communicate.
-                IP is responsible for addressing and forwarding packets,
-                while TCP provides reliable transport services when required.
-            </p>
-        </article>
-
-        <article>
-            <h3>DNS</h3>
-
-            <p>
-                DNS introduced a scalable naming system that allowed users
-                to use names instead of remembering numerical network
-                addresses.
-            </p>
-        </article>
-
-        <article>
-            <h3>NSFNET and Expansion</h3>
-
-            <p>
-                NSFNET helped connect research and educational institutions
-                and contributed to the growth of the Internet beyond its
-                original research environment.
-            </p>
-        </article>
-    </section>
-
-    <section id="references">
+    <header>
         <h2>References</h2>
 
-        <article>
-            <h3>Internet Society</h3>
-            <p>
-                Internet Society.
-                <cite>A Brief History of the Internet</cite>.
+        <p>
+            The following sources were used to verify the historical
+            information presented on this page. They were selected from
+            recognized organizations, government institutions, museums,
+            and international organizations.
+        </p>
+    </header>
+
+
+    <article>
+        <h3>Internet Society</h3>
+
+        <ul>
+            <li>
+                <strong>Organization:</strong> Internet Society
+            </li>
+
+            <li>
+                <strong>Title:</strong>
+                A Brief History of the Internet
+            </li>
+
+            <li>
+                <strong>URL:</strong>
                 <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
-                   target="_blank">
+                   target="_blank"
+                   rel="noopener noreferrer">
                     https://www.internetsociety.org/internet/history-internet/brief-history-internet/
                 </a>
-            </p>
-        </article>
+            </li>
 
-        <article>
-            <h3>Internet Society — Related Networks</h3>
-            <p>
-                Vint Cerf.
-                <cite>A Brief History of the Internet &amp; Related Networks</cite>.
-                <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet-related-networks/"
-                   target="_blank">
-                    https://www.internetsociety.org/internet/history-internet/brief-history-internet-related-networks/
+            <li>
+                <strong>Supports:</strong>
+                Packet switching, ARPANET, TCP/IP, DNS, NSFNET,
+                commercialization, and the development of the Internet.
+            </li>
+        </ul>
+    </article>
+
+
+    <article>
+        <h3>DARPA</h3>
+
+        <ul>
+            <li>
+                <strong>Organization:</strong>
+                Defense Advanced Research Projects Agency (DARPA)
+            </li>
+
+            <li>
+                <strong>Title:</strong>
+                ARPANET
+            </li>
+
+            <li>
+                <strong>URL:</strong>
+                <a href="https://www.darpa.mil/news/features/arpanet"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    https://www.darpa.mil/news/features/arpanet
                 </a>
-            </p>
-        </article>
+            </li>
 
-        <article>
-            <h3>Computer History Museum</h3>
-            <p>
-                Computer History Museum.
-                <cite>Internet History</cite>.
+            <li>
+                <strong>Supports:</strong>
+                The origins of ARPANET, the four-node network in 1969,
+                the 1983 TCP/IP transition, and the end of ARPANET.
+            </li>
+        </ul>
+    </article>
+
+
+    <article>
+        <h3>National Science Foundation</h3>
+
+        <ul>
+            <li>
+                <strong>Organization:</strong>
+                U.S. National Science Foundation (NSF)
+            </li>
+
+            <li>
+                <strong>Title:</strong>
+                Birth of the Commercial Internet
+            </li>
+
+            <li>
+                <strong>URL:</strong>
+                <a href="https://www.nsf.gov/impacts/internet"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    https://www.nsf.gov/impacts/internet
+                </a>
+            </li>
+
+            <li>
+                <strong>Supports:</strong>
+                ARPANET, TCP/IP, NSFNET, expansion of academic networking,
+                commercialization, and the 1995 retirement of NSFNET.
+            </li>
+        </ul>
+    </article>
+
+
+    <article>
+        <h3>Computer History Museum</h3>
+
+        <ul>
+            <li>
+                <strong>Organization:</strong>
+                Computer History Museum
+            </li>
+
+            <li>
+                <strong>Title:</strong>
+                Internet History 1962 to 1992
+            </li>
+
+            <li>
+                <strong>URL:</strong>
                 <a href="https://www.computerhistory.org/internethistory/"
-                   target="_blank">
+                   target="_blank"
+                   rel="noopener noreferrer">
                     https://www.computerhistory.org/internethistory/
                 </a>
-            </p>
-        </article>
+            </li>
 
-        <article>
-            <h3>Computer History Museum — 1970s</h3>
-            <p>
-                Computer History Museum.
-                <cite>Internet History of 1970s</cite>.
-                <a href="https://www.computerhistory.org/internethistory/1970s/"
-                   target="_blank">
-                    https://www.computerhistory.org/internethistory/1970s/
+            <li>
+                <strong>Supports:</strong>
+                Early Internet history, ARPANET, packet networking,
+                and developments from the 1960s through 1992.
+            </li>
+        </ul>
+    </article>
+
+
+    <article>
+        <h3>Internet Society — Internet and Related Networks</h3>
+
+        <ul>
+            <li>
+                <strong>Author:</strong>
+                Vinton G. Cerf
+            </li>
+
+            <li>
+                <strong>Title:</strong>
+                A Brief History of the Internet &amp; Related Networks
+            </li>
+
+            <li>
+                <strong>URL:</strong>
+                <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet-related-networks/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    https://www.internetsociety.org/internet/history-internet/brief-history-internet-related-networks/
                 </a>
-            </p>
-        </article>
+            </li>
 
-        <article>
-            <h3>Computer History Museum — 1980s</h3>
-            <p>
-                Computer History Museum.
-                <cite>Internet History of 1980s</cite>.
-                <a href="https://www.computerhistory.org/internethistory/1980s/"
-                   target="_blank">
-                    https://www.computerhistory.org/internethistory/1980s/
+            <li>
+                <strong>Supports:</strong>
+                Internetting research, TCP/IP, DNS, NSFNET,
+                and the development of interconnected networks.
+            </li>
+        </ul>
+    </article>
+
+
+    <article>
+        <h3>International Telecommunication Union</h3>
+
+        <ul>
+            <li>
+                <strong>Organization:</strong>
+                International Telecommunication Union (ITU)
+            </li>
+
+            <li>
+                <strong>Title:</strong>
+                Measuring digital development: Facts and Figures 2025
+            </li>
+
+            <li>
+                <strong>URL:</strong>
+                <a href="https://www.itu.int/en/ITU-D/Statistics/Pages/facts/default.aspx"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    https://www.itu.int/en/ITU-D/Statistics/Pages/facts/default.aspx
                 </a>
-            </p>
-        </article>
-    </section>
+            </li>
 
-</main>
+            <li>
+                <strong>Supports:</strong>
+                Current global Internet-use statistics, mobile broadband,
+                5G connectivity, and the remaining global digital divide.
+            </li>
+        </ul>
+    </article>
 
-<footer>
-    <p>
-        This page was created for educational purposes.
-        It presents the history of the Internet separately from the history
-        of the World Wide Web.
-    </p>
-</footer>
+</section>
 
-</body>
-</html>
+
+{% endblock %}

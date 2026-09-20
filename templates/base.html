@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}Web Programming Portfolio{% endblock %}
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>My Web Programming Portfolio - Jean Mkhaiber</h1>
+
+    <!-- If image.png is your logo, keep this image -->
+    <img src="{{ url_for('static', filename='image.png') }}"
+         alt="Website logo">
+</header>
+
+<nav>
+    <h2>Site Navigation</h2>
+
+    <ul>
+        <li>
+            <a href="{{ url_for('home') }}">Home</a>
+        </li>
+
+        <li>
+            <a href="{{ url_for('internet_history') }}">
+                Internet History
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ url_for('web_history') }}">
+                Web History
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ url_for('internet_history_ai') }}">
+                Internet History AI
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ url_for('web_history_ai') }}">
+                Web History AI
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<main>
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+<footer>
+    <p>
+        Web Programming — built with Flask and deployed on Render.
+    </p>
+
+    <p>
+        This website is created for educational purposes only,
+        as part of the GIN446 - Web Programming course,
+        School of Engineering, USEK. (Fall 2026-2027)
+    </p>
+</footer>
+
+</body>
+</html>

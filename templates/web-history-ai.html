@@ -1,483 +1,914 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of the World Wide Web</title>
-</head>
+{% extends "base.html" %}
 
-<body>
+{% block title %}
+History of the World Wide Web — AI Version
+{% endblock %}
+
+{% block content %}
 
 <header>
     <h1>History of the World Wide Web</h1>
+
     <p>
         The World Wide Web is a system of interconnected information
-        resources that was created on top of the Internet.
+        resources that operates over the Internet. It allows users to
+        access and connect documents and other resources through
+        hyperlinks using web browsers and web technologies.
     </p>
 </header>
 
+
 <nav>
-    <h2>Navigation</h2>
+    <h2>Page Navigation</h2>
+
     <ul>
-        <li><a href="/">Home</a></li>
         <li><a href="#introduction">Introduction</a></li>
         <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#technologies">Web Technologies</a></li>
+        <li><a href="#technologies">Major Technologies</a></li>
         <li><a href="#references">References</a></li>
     </ul>
 </nav>
 
-<main>
 
-    <section id="introduction">
+<section id="introduction">
+
+    <header>
         <h2>Introduction</h2>
+    </header>
+
+    <article>
+
+        <h3>What is the World Wide Web?</h3>
 
         <p>
-            The World Wide Web was invented by British computer scientist
-            Tim Berners-Lee while he was working at CERN in Switzerland.
-            He proposed the Web in 1989 as a way to improve information
-            sharing between researchers.
+            The World Wide Web, commonly called the Web, is a global
+            information system that allows users to access interconnected
+            documents and resources through the Internet. Information on
+            the Web can be connected through hyperlinks and accessed using
+            web browsers.
         </p>
 
         <p>
-            The Web combined several ideas, including hypertext,
-            computer networks, documents and browsers. It allowed users
-            to move between connected information resources through
-            hyperlinks.
+            The Web is not the same thing as the Internet. The Internet is
+            the underlying global network infrastructure that connects
+            computers and networks. The World Wide Web is a service that
+            operates on top of that infrastructure.
         </p>
 
         <p>
-            The Web should not be confused with the Internet. The Internet
-            is the underlying global network infrastructure, while the Web
-            is an information system that operates using that network.
+            The World Wide Web was invented by British scientist
+            Tim Berners-Lee while he was working at CERN, the European
+            particle physics laboratory, in 1989. His original idea was
+            motivated by the need for researchers at universities and
+            scientific institutions around the world to share information
+            more easily.
         </p>
-    </section>
-
-    <section id="timeline">
-        <h2>World Wide Web Timeline</h2>
-
-        <article>
-            <h3><time datetime="1989">1989</time> —
-                Tim Berners-Lee Proposes the Web</h3>
-
-            <p>
-                Tim Berners-Lee wrote the first proposal for the World Wide
-                Web while working at CERN.
-            </p>
-
-            <p>
-                His objective was to create a system that could make
-                information easier to share between researchers working
-                in different locations.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1990-11">November 1990</time> —
-                WorldWideWeb Proposal</h3>
-
-            <p>
-                Tim Berners-Lee and Robert Cailliau formalized the proposal
-                for a hypertext project called WorldWideWeb.
-            </p>
-
-            <p>
-                The proposal described a system in which hypertext documents
-                could be accessed using browsers and connected through
-                links.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1990-10">October 1990</time> —
-                First Web Server and Browser</h3>
-
-            <p>
-                By the end of 1990, Berners-Lee had developed the first
-                Web server and the first Web browser at CERN.
-            </p>
-
-            <p>
-                The original browser was called WorldWideWeb and was
-                developed on a NeXT computer.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1990">1990</time> —
-                Early Web Technologies</h3>
-
-            <p>
-                Berners-Lee developed the basic technologies that made the
-                Web possible, including HTML for describing documents,
-                HTTP for communication, and URI-based addressing for
-                identifying resources.
-            </p>
-
-            <p>
-                These technologies formed an important foundation for the
-                Web as it developed.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1991">1991</time> —
-                Web Software Released at CERN</h3>
-
-            <p>
-                In 1991, the World Wide Web software became available to
-                CERN colleagues. Later that year, Berners-Lee announced
-                the software on Internet newsgroups.
-            </p>
-
-            <p>
-                This helped researchers outside CERN discover the Web and
-                begin using and developing it.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1991-12">December 1991</time> —
-                First Web Server in the United States</h3>
-
-            <p>
-                The first Web server in the United States was established
-                at the Stanford Linear Accelerator Center, known as SLAC.
-            </p>
-
-            <p>
-                Paul Kunz and Louise Addis helped bring the server online,
-                extending the Web beyond CERN.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1991">1991</time> —
-                The First Website</h3>
-
-            <p>
-                The first website and Web server used the address
-                <strong>info.cern.ch</strong>.
-            </p>
-
-            <p>
-                The first website described the World Wide Web project,
-                explained hypertext, and provided information about how
-                Web servers could be created.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1992">1992</time> —
-                Line-Mode Browser</h3>
-
-            <p>
-                A simpler line-mode browser was developed to make the Web
-                available on more types of computers.
-            </p>
-
-            <p>
-                Nicola Pellow worked on the line-mode browser while at CERN.
-                Unlike the original NeXT browser, it was designed to work
-                on a wider range of systems.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1993">Early 1993</time> —
-                Mosaic Browser</h3>
-
-            <p>
-                The National Center for Supercomputing Applications,
-                or NCSA, released an early version of the Mosaic browser.
-            </p>
-
-            <p>
-                Mosaic provided a more user-friendly graphical browsing
-                experience and helped make the Web more accessible on
-                popular computer systems.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1993-04-30">30 April 1993</time> —
-                CERN Releases Web Software</h3>
-
-            <p>
-                CERN placed the World Wide Web software in the public
-                domain and made it available on a royalty-free basis.
-            </p>
-
-            <p>
-                This decision helped other people and organizations use,
-                develop and distribute Web technology without having to
-                pay licensing fees.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1993">Late 1993</time> —
-                Rapid Web Growth</h3>
-
-            <p>
-                The number of Web servers increased rapidly. CERN reports
-                that by late 1993 there were more than 500 known Web servers.
-            </p>
-
-            <p>
-                The increasing availability of browsers and servers helped
-                transform the Web from a research project into a growing
-                global information system.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1994-05">May 1994</time> —
-                First International WWW Conference</h3>
-
-            <p>
-                The first International World Wide Web Conference was held
-                at CERN in May 1994.
-            </p>
-
-            <p>
-                The conference brought together researchers, developers and
-                users interested in the rapidly developing Web.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1994-10">October 1994</time> —
-                W3C Is Founded</h3>
-
-            <p>
-                Tim Berners-Lee founded the World Wide Web Consortium,
-                known as W3C, at MIT in October 1994.
-            </p>
-
-            <p>
-                CERN, MIT, DARPA and the European Commission supported the
-                creation of the organization.
-            </p>
-
-            <p>
-                W3C was created to help coordinate Web technologies and
-                encourage common standards and interoperability.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1995">1995</time> —
-                HTML 2.0</h3>
-
-            <p>
-                HTML 2.0 provided a formal specification for important
-                features of HTML and helped establish a common foundation
-                for Web documents.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1997-01-14">14 January 1997</time> —
-                HTML 3.2</h3>
-
-            <p>
-                W3C issued HTML 3.2 as a Recommendation in January 1997.
-            </p>
-
-            <p>
-                It included widely used features such as tables, applets,
-                images and other capabilities that had become common on
-                the Web.
-            </p>
-        </article>
-
-        <article>
-            <h3><time datetime="1997-12-18">18 December 1997</time> —
-                HTML 4.0</h3>
-
-            <p>
-                W3C issued HTML 4.0 as a Recommendation in December 1997.
-            </p>
-
-            <p>
-                HTML 4.0 introduced improvements involving forms, tables,
-                scripting, style sheets, accessibility and international
-                support.
-            </p>
-        </article>
-    </section>
-
-    <section id="technologies">
-        <h2>Important Web Technologies</h2>
-
-        <article>
-            <h3>HTML</h3>
-
-            <p>
-                HTML stands for HyperText Markup Language. It is used to
-                structure information in Web documents and create elements
-                such as headings, paragraphs, lists and hyperlinks.
-            </p>
-        </article>
-
-        <article>
-            <h3>HTTP</h3>
-
-            <p>
-                HTTP stands for HyperText Transfer Protocol. It provides
-                rules for communication between Web clients and Web servers.
-            </p>
-        </article>
-
-        <article>
-            <h3>URLs and URIs</h3>
-
-            <p>
-                Web resources need identifiers so that they can be located
-                and referenced. The early Web included URI-based addressing,
-                which became an important part of Web navigation.
-            </p>
-        </article>
-
-        <article>
-            <h3>Web Browsers</h3>
-
-            <p>
-                A Web browser is software that allows users to access and
-                interact with Web resources. The original WorldWideWeb
-                browser was created by Tim Berners-Lee.
-            </p>
-        </article>
-
-        <article>
-            <h3>Web Servers</h3>
-
-            <p>
-                A Web server provides Web resources to clients. The first
-                Web server was created by Tim Berners-Lee at CERN.
-            </p>
-        </article>
-
-        <article>
-            <h3>Web Standards</h3>
-
-            <p>
-                Web standards provide common technical rules that help
-                browsers, servers and websites work together.
-            </p>
-
-            <p>
-                The World Wide Web Consortium has played an important role
-                in coordinating Web standards since its creation in 1994.
-            </p>
-        </article>
-    </section>
-
-    <section id="references">
+
+        <p>
+            Berners-Lee proposed a system based on hypertext that could
+            connect information stored on different computers. His proposal
+            eventually developed into the World Wide Web, combining
+            hypertext with Internet technologies to create a global
+            information system.
+        </p>
+
+        <p>
+            The fundamental technologies of the original Web included
+            HyperText Markup Language (HTML), the HyperText Transfer
+            Protocol (HTTP), and Uniform Resource Identifiers (URIs).
+            Together, these technologies provided a way to create,
+            identify, retrieve, and connect Web resources.
+        </p>
+
+        <p>
+            By the end of 1990, Berners-Lee had created the first Web
+            browser and the first Web server at CERN. The first Web server
+            operated on a NeXT computer, and the first website was hosted
+            at the address info.cern.ch.
+        </p>
+
+        <p>
+            In 1991, the Web software was made available more broadly,
+            allowing people outside the original CERN environment to begin
+            experimenting with the technology. The Web then expanded
+            rapidly as additional browsers and servers were developed.
+        </p>
+
+        <p>
+            A particularly important milestone occurred on 30 April 1993,
+            when CERN made the World Wide Web software available in the
+            public domain. This removed licensing barriers and helped the
+            Web spread around the world.
+        </p>
+
+        <p>
+            The Web continued to develop through the creation of browsers,
+            Web standards, multimedia technologies, interactive
+            applications, mobile Web access, cloud-based services, and
+            modern Web APIs. Today, the Web supports education,
+            communication, commerce, research, entertainment, government
+            services, and many other activities.
+        </p>
+
+    </article>
+
+</section>
+
+
+<section id="timeline">
+
+    <header>
+        <h2>Timeline of the World Wide Web</h2>
+
+        <p>
+            The timeline below presents major milestones in the
+            development of the World Wide Web from its creation at CERN
+            to modern Web technologies.
+        </p>
+    </header>
+
+
+    <article>
+
+        <header>
+            <h3>1989 — The Original Web Proposal</h3>
+        </header>
+
+        <p>
+            In March 1989, Tim Berners-Lee wrote his first proposal for an
+            information-management system while working at CERN.
+        </p>
+
+        <p>
+            The proposal described a system based on hypertext that could
+            allow information to be connected and accessed across
+            different computers.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>1990 — The Web Takes Shape</h3>
+        </header>
+
+        <p>
+            In 1990, Tim Berners-Lee developed the main components of the
+            Web at CERN. He created the first Web server and the first
+            browser, called WorldWideWeb.
+        </p>
+
+        <p>
+            He also worked on the fundamental technologies that became
+            HTML, HTTP, and URIs.
+        </p>
+
+        <p>
+            By the end of 1990, the first Web server and browser were
+            operating at CERN on a NeXT computer.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>1991 — The Web Becomes Available on the Internet</h3>
+        </header>
+
+        <p>
+            In 1991, Berners-Lee released the World Wide Web software more
+            broadly. The software included the Web server, browser, and
+            supporting development tools.
+        </p>
+
+        <p>
+            In August 1991, information about the WWW project was
+            announced on Internet newsgroups, helping researchers and
+            developers around the world discover the new technology.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>1991 — The First Web Server Outside Europe</h3>
+        </header>
+
+        <p>
+            In December 1991, the first Web server in the United States
+            came online at the Stanford Linear Accelerator Center (SLAC)
+            in California.
+        </p>
+
+        <p>
+            This helped demonstrate that the Web could expand beyond CERN
+            and become an international information system.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>1992 — Early Graphical Browsers</h3>
+        </header>
+
+        <p>
+            During 1992, several developers began creating additional Web
+            browsers. Examples included Viola and other browsers designed
+            for different computer environments.
+        </p>
+
+        <p>
+            The development of multiple browsers made the Web available
+            on a wider range of computer systems.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>1993 — Mosaic and the Rapid Growth of the Web</h3>
+        </header>
+
+        <p>
+            In early 1993, the National Center for Supercomputing
+            Applications (NCSA) released an early version of the Mosaic
+            browser.
+        </p>
+
+        <p>
+            Mosaic provided a user-friendly graphical interface and
+            versions were subsequently made available for popular
+            personal-computer platforms. Its ease of use contributed
+            significantly to the rapid growth of the Web.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>30 April 1993 — CERN Makes the Web Publicly Available</h3>
+        </header>
+
+        <p>
+            On 30 April 1993, CERN announced that the World Wide Web
+            technology could be used freely without fees being paid to
+            CERN.
+        </p>
+
+        <p>
+            Making the technology freely available was a major milestone
+            because organizations and developers could use and build on
+            the Web without paying licensing fees to CERN.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>1994 — The Web Becomes an International Platform</h3>
+        </header>
+
+        <p>
+            During 1994, the Web experienced rapid international growth.
+            The first International World Wide Web Conference was held at
+            CERN in May 1994.
+        </p>
+
+        <p>
+            The increasing number of Web servers, browsers, users, and
+            organizations demonstrated that the Web was becoming a major
+            platform for global information sharing.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>1994 — Creation of the W3C</h3>
+        </header>
+
+        <p>
+            In October 1994, Tim Berners-Lee founded the World Wide Web
+            Consortium (W3C) at the Massachusetts Institute of Technology
+            (MIT), in collaboration with CERN and with support from other
+            organizations.
+        </p>
+
+        <p>
+            The purpose of the W3C was to coordinate the development of
+            Web standards and help ensure that Web technologies could work
+            consistently across different systems.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>1995–1999 — The Commercial Web and Browser Competition</h3>
+        </header>
+
+        <p>
+            During the second half of the 1990s, the Web became an
+            important commercial platform. Businesses began creating
+            websites and offering online services.
+        </p>
+
+        <p>
+            Web browsers also became increasingly competitive. Netscape
+            Navigator and Microsoft Internet Explorer were among the most
+            important browsers during this period.
+        </p>
+
+        <p>
+            The rapid development of browser technologies created
+            compatibility problems, increasing the importance of common
+            Web standards.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>Late 1990s–2000s — CSS, JavaScript and Interactive Web Pages</h3>
+        </header>
+
+        <p>
+            Web development became increasingly sophisticated with the
+            growth of Cascading Style Sheets (CSS) and JavaScript.
+        </p>
+
+        <p>
+            HTML provided the structure of Web documents, CSS provided
+            presentation and styling, and JavaScript allowed Web pages to
+            respond dynamically to user interaction.
+        </p>
+
+        <p>
+            These technologies helped move the Web from mainly static
+            documents toward increasingly interactive applications.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>2000s — The Interactive and Social Web</h3>
+        </header>
+
+        <p>
+            During the 2000s, Web applications became increasingly
+            interactive. Users could create and share content through
+            blogs, social networking services, online communities, and
+            multimedia platforms.
+        </p>
+
+        <p>
+            Web technologies also became more capable of communicating
+            with servers in the background, allowing pages to update
+            information without requiring a complete page reload.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>2008–2014 — HTML5 and Modern Web Applications</h3>
+        </header>
+
+        <p>
+            HTML5 introduced and standardized a wide range of capabilities
+            for modern Web applications, including semantic elements,
+            multimedia, graphics, forms, and application programming
+            interfaces.
+        </p>
+
+        <p>
+            The evolution of HTML, CSS, JavaScript, and Web APIs allowed
+            developers to create applications that could provide
+            increasingly sophisticated experiences directly in Web
+            browsers.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>2010s — Mobile Web and Responsive Design</h3>
+        </header>
+
+        <p>
+            The rapid growth of smartphones and tablets changed how users
+            accessed the Web. Websites increasingly needed to work on
+            screens of many different sizes.
+        </p>
+
+        <p>
+            Responsive Web design became an important development,
+            allowing layouts to adapt to different devices and screen
+            dimensions.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>2010s — Web Applications and APIs</h3>
+        </header>
+
+        <p>
+            Modern Web applications increasingly used JavaScript,
+            browser APIs, databases, cloud services, and server-side
+            technologies to provide functionality traditionally associated
+            with desktop applications.
+        </p>
+
+        <p>
+            Web APIs also made it possible for applications to communicate
+            with other services and exchange structured data.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>2020s — Modern Web Platform</h3>
+        </header>
+
+        <p>
+            During the 2020s, the Web continued to develop as a platform
+            for applications, communication, education, commerce,
+            multimedia, and cloud-based services.
+        </p>
+
+        <p>
+            Modern Web development includes technologies such as HTML,
+            CSS, JavaScript, Web APIs, HTTPS, HTTP/2, HTTP/3, WebAssembly,
+            responsive design, accessibility technologies, and
+            browser-based applications.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>Today — The Web as a Global Application Platform</h3>
+        </header>
+
+        <p>
+            Today, the World Wide Web is one of the most widely used
+            information and application systems operating over the
+            Internet.
+        </p>
+
+        <p>
+            The modern Web supports websites, online applications,
+            streaming, communication, education, research, digital
+            commerce, government services, collaboration, and many other
+            activities.
+        </p>
+
+        <p>
+            The Web continues to evolve through new standards, browser
+            capabilities, security technologies, accessibility practices,
+            performance improvements, and new types of Web applications.
+        </p>
+
+    </article>
+
+</section>
+
+
+<section id="technologies">
+
+    <header>
+        <h2>Three Major Developments and Key Technologies</h2>
+
+        <p>
+            The Web developed through several technologies and standards.
+            Three fundamental technologies from its original architecture
+            are HTML, HTTP, and URI/URL addressing.
+        </p>
+    </header>
+
+
+    <article>
+
+        <header>
+            <h3>1. HTML — HyperText Markup Language</h3>
+        </header>
+
+        <p>
+            HTML is the markup language used to structure information
+            presented on the Web. It allows authors to organize content
+            into elements such as headings, paragraphs, lists, links,
+            images, forms, and other types of content.
+        </p>
+
+        <p>
+            HTML was one of the fundamental technologies created during
+            the development of the World Wide Web by Tim Berners-Lee.
+            Hyperlinks were especially important because they allowed
+            documents to connect to other documents and resources.
+        </p>
+
+        <p>
+            HTML has continued to evolve. Modern HTML provides semantic
+            elements and capabilities for creating structured and
+            interactive Web documents and applications.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>2. HTTP — HyperText Transfer Protocol</h3>
+        </header>
+
+        <p>
+            HTTP is a protocol used for communication between Web clients
+            and servers. A Web browser can send an HTTP request for a
+            resource, and a Web server can return a response containing
+            that resource or information about it.
+        </p>
+
+        <p>
+            HTTP was part of the original Web architecture developed at
+            CERN. The protocol has evolved through several versions as
+            the requirements of the Web have changed.
+        </p>
+
+        <p>
+            Modern Web communication can use newer versions such as
+            HTTP/2 and HTTP/3, which were designed to improve the
+            performance and efficiency of communication between clients
+            and servers.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>3. URIs and URLs — Identifying Web Resources</h3>
+        </header>
+
+        <p>
+            Uniform Resource Identifiers (URIs) provide a standardized way
+            to identify resources. URLs, or Uniform Resource Locators,
+            are a familiar type of URI used to identify resources and
+            provide information about how they can be located.
+        </p>
+
+        <p>
+            Addressing is fundamental to the Web because users need a
+            consistent way to refer to Web pages and other resources.
+            Links can use these identifiers to connect one resource to
+            another.
+        </p>
+
+        <p>
+            Together with HTML and HTTP, resource identification helped
+            create the interconnected structure that distinguishes the
+            World Wide Web.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <header>
+            <h3>Supporting Technologies: CSS and JavaScript</h3>
+        </header>
+
+        <p>
+            HTML, HTTP, and URI addressing form part of the fundamental
+            architecture of the Web. Modern Web development also relies
+            heavily on technologies such as CSS and JavaScript.
+        </p>
+
+        <p>
+            CSS is used to control the presentation and visual layout of
+            Web documents, while JavaScript enables dynamic behavior and
+            interaction within Web pages and applications.
+        </p>
+
+        <p>
+            The combination of HTML, CSS, JavaScript, Web APIs, and
+            network protocols allows modern browsers to function as
+            powerful application platforms.
+        </p>
+
+    </article>
+
+</section>
+
+
+<section id="references">
+
+    <header>
         <h2>References</h2>
 
-        <article>
-            <h3>CERN — A Short History of the Web</h3>
+        <p>
+            The following sources were selected from authoritative
+            organizations directly involved in the development and
+            standardization of the World Wide Web.
+        </p>
+    </header>
 
-            <p>
-                CERN.
-                <cite>A short history of the Web</cite>.
-                <a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/"
-                   target="_blank">
-                    https://home.cern/science/computing/the-birth-of-the-web/short-history-web/
+
+    <article>
+
+        <h3>CERN — The Birth of the Web</h3>
+
+        <ul>
+
+            <li>
+                <strong>Organization:</strong>
+                CERN
+            </li>
+
+            <li>
+                <strong>Page title:</strong>
+                The birth of the Web
+            </li>
+
+            <li>
+                <strong>URL:</strong>
+                <a href="https://home.cern/science/computing/birth-web"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    CERN — The birth of the Web
                 </a>
-            </p>
-        </article>
+            </li>
 
-        <article>
-            <h3>CERN — The Birth of the Web</h3>
+            <li>
+                <strong>Supports:</strong>
+                The invention of the World Wide Web, Tim Berners-Lee,
+                CERN, the first Web server, the first website, and the
+                public release of the Web software in 1993.
+            </li>
 
-            <p>
-                CERN.
-                <cite>The birth of the Web</cite>.
-                <a href="https://home.cern/science/computing/the-birth-of-the-web/"
-                   target="_blank">
-                    https://home.cern/science/computing/the-birth-of-the-web/
+        </ul>
+
+    </article>
+
+
+    <article>
+
+        <h3>CERN — A Short History of the Web</h3>
+
+        <ul>
+
+            <li>
+                <strong>Organization:</strong>
+                CERN
+            </li>
+
+            <li>
+                <strong>Page title:</strong>
+                A short history of the Web
+            </li>
+
+            <li>
+                <strong>URL:</strong>
+                <a href="https://home.cern/science/computing/birth-web/short-history-web"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    CERN — A short history of the Web
                 </a>
-            </p>
-        </article>
+            </li>
 
-        <article>
-            <h3>W3C — History</h3>
+            <li>
+                <strong>Supports:</strong>
+                The 1989 proposal, development of the first browser and
+                server, 1991 release, first Web server in the United
+                States, Mosaic, CERN's 1993 public-domain release,
+                W3C, and early Web expansion.
+            </li>
 
-            <p>
-                World Wide Web Consortium.
-                <cite>History</cite>.
+        </ul>
+
+    </article>
+
+
+    <article>
+
+        <h3>W3C — History of the World Wide Web</h3>
+
+        <ul>
+
+            <li>
+                <strong>Organization:</strong>
+                World Wide Web Consortium (W3C)
+            </li>
+
+            <li>
+                <strong>Page title:</strong>
+                History
+            </li>
+
+            <li>
+                <strong>URL:</strong>
                 <a href="https://www.w3.org/about/history/"
-                   target="_blank">
-                    https://www.w3.org/about/history/
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    W3C — History
                 </a>
-            </p>
-        </article>
+            </li>
 
-        <article>
-            <h3>W3C — A Little History of the Web</h3>
+            <li>
+                <strong>Supports:</strong>
+                Tim Berners-Lee's invention of the Web, the first
+                Web server and client, HTML, HTTP, URIs, and the creation
+                of W3C in 1994.
+            </li>
 
-            <p>
-                World Wide Web Consortium.
-                <cite>A Little History of the World Wide Web</cite>.
-                <a href="https://www.w3.org/History.html?lang=en"
-                   target="_blank">
-                    https://www.w3.org/History.html?lang=en
+        </ul>
+
+    </article>
+
+
+    <article>
+
+        <h3>W3C — The Original Web Proposal</h3>
+
+        <ul>
+
+            <li>
+                <strong>Author:</strong>
+                Tim Berners-Lee and Robert Cailliau
+            </li>
+
+            <li>
+                <strong>Page title:</strong>
+                WorldWideWeb: Proposal for a HyperText Project
+            </li>
+
+            <li>
+                <strong>URL:</strong>
+                <a href="https://www.w3.org/Proposal.html"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    W3C — WorldWideWeb: Proposal for a HyperText Project
                 </a>
-            </p>
-        </article>
+            </li>
 
-        <article>
-            <h3>W3C — HTML 3.2</h3>
+            <li>
+                <strong>Supports:</strong>
+                The original 1990 proposal describing the HyperText
+                project and its purpose.
+            </li>
 
-            <p>
-                World Wide Web Consortium.
-                <cite>The World Wide Web Consortium Issues HTML 3.2 as a Recommendation</cite>.
-                <a href="https://www.w3.org/press-releases/1997/html32-rec/"
-                   target="_blank">
-                    https://www.w3.org/press-releases/1997/html32-rec/
+        </ul>
+
+    </article>
+
+
+    <article>
+
+        <h3>W3C — Web History Timeline</h3>
+
+        <ul>
+
+            <li>
+                <strong>Organization:</strong>
+                World Wide Web Consortium (W3C)
+            </li>
+
+            <li>
+                <strong>Page title:</strong>
+                Web at 25 — Web History
+            </li>
+
+            <li>
+                <strong>URL:</strong>
+                <a href="https://www.w3.org/webat25/about/history"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    W3C — Web at 25: Web History
                 </a>
-            </p>
-        </article>
+            </li>
 
-        <article>
-            <h3>W3C — HTML 4.0</h3>
+            <li>
+                <strong>Supports:</strong>
+                Important early milestones from 1989 through the
+                establishment of the Web and W3C.
+            </li>
 
-            <p>
-                World Wide Web Consortium.
-                <cite>The World Wide Web Consortium Issues HTML 4.0 as a W3C Recommendation</cite>.
-                <a href="https://www.w3.org/press-releases/1997/html40-rec/"
-                   target="_blank">
-                    https://www.w3.org/press-releases/1997/html40-rec/
+        </ul>
+
+    </article>
+
+
+    <article>
+
+        <h3>W3C — A Little History of the World Wide Web</h3>
+
+        <ul>
+
+            <li>
+                <strong>Organization:</strong>
+                World Wide Web Consortium (W3C)
+            </li>
+
+            <li>
+                <strong>Page title:</strong>
+                A Little History of the World Wide Web
+            </li>
+
+            <li>
+                <strong>URL:</strong>
+                <a href="https://www.w3.org/History.html"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    W3C — A Little History of the World Wide Web
                 </a>
-            </p>
-        </article>
+            </li>
 
-        <article>
-            <h3>Computer History Museum — 1993</h3>
+            <li>
+                <strong>Supports:</strong>
+                Early browsers, Mosaic, CERN's 1993 declaration,
+                and the development of Web standards.
+            </li>
 
-            <p>
-                Computer History Museum.
-                <cite>1993 Timeline of Computer History</cite>.
-                <a href="https://www.computerhistory.org/timeline/1993/"
-                   target="_blank">
-                    https://www.computerhistory.org/timeline/1993/
+        </ul>
+
+    </article>
+
+
+    <article>
+
+        <h3>W3C — Tim Berners-Lee Biography</h3>
+
+        <ul>
+
+            <li>
+                <strong>Organization:</strong>
+                World Wide Web Consortium (W3C)
+            </li>
+
+            <li>
+                <strong>Page title:</strong>
+                Tim Berners-Lee
+            </li>
+
+            <li>
+                <strong>URL:</strong>
+                <a href="https://www.w3.org/People/Berners-Lee/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    W3C — Tim Berners-Lee
                 </a>
-            </p>
-        </article>
-    </section>
+            </li>
 
-</main>
+            <li>
+                <strong>Supports:</strong>
+                Tim Berners-Lee's role in inventing the Web and developing
+                the first Web client and server.
+            </li>
 
-<footer>
-    <p>
-        This page was created for educational purposes.
-        It presents the history of the World Wide Web separately from
-        the history of the Internet.
-    </p>
-</footer>
+        </ul>
 
-</body>
-</html>
+    </article>
+
+</section>
+
+
+{% endblock %}

@@ -1,175 +1,665 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>History of the Internet</title>
-</head>
+{% extends "base.html" %}
 
-<body>
+{% block title %}
+History of the Internet
+{% endblock %}
+
+{% block content %}
 
 <header>
     <h1>History of the Internet</h1>
 
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/internet-history">Internet</a> |
-        <a href="/web-history">Web</a>
-    </nav>
+    <p>
+        The Internet is a global network of interconnected networks.
+        Its development took place over many decades through research
+        in computer networking, packet switching, communication
+        protocols, and network infrastructure.
+    </p>
 </header>
 
-<main>
 
-<section>
+<nav>
+    <h2>Page Navigation</h2>
+
+    <ul>
+        <li>
+            <a href="#introduction">Introduction</a>
+        </li>
+
+        <li>
+            <a href="#timeline">Internet Timeline</a>
+        </li>
+
+        <li>
+            <a href="#technologies">Key Technologies</a>
+        </li>
+
+        <li>
+            <a href="#references">References</a>
+        </li>
+    </ul>
+</nav>
+
+
+<section id="introduction">
+
     <h2>Introduction</h2>
+
     <p>
-        The Internet is a worldwide network that connects computers and
-        networks. It developed from early research networks such as ARPANET
-        and later grew through technologies such as TCP/IP and DNS.
+        The Internet did not begin as one large network. It developed
+        gradually from research projects that explored how computers
+        could communicate and share information across long distances.
+        Several researchers and organizations contributed to this
+        development over many years.
     </p>
+
+    
+    <p>
+        Today, the Internet is used around the world for communication,
+        education, research, business, entertainment, cloud services,
+        online collaboration, and many other activities. However,
+        access is still not equal everywhere, and differences in
+        infrastructure, affordability, quality, and digital skills
+        continue to affect who can fully use Internet services.
+    </p>
+
 </section>
 
-<section>
+
+<section id="timeline">
+
     <h2>Internet Timeline</h2>
 
     <article>
-        <h3>1961 : Packet Switching</h3>
+        <h3>1960s — The Early Foundations</h3>
+
         <p>
-            Leonard Kleinrock published research about packet switching.
-            This became an important idea for computer networks.
+            In the 1960s, researchers began exploring new ways for
+            computers to communicate. One important development was
+            packet switching, an approach in which information is
+            divided into smaller packets before being transmitted.
         </p>
+
         <p>
-            <strong>Source:</strong>
-            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/">
+            Researchers at organizations including RAND, MIT, and the
+            UK's National Physical Laboratory contributed to the
+            development and study of packet-switched networking.
+        </p>
+
+        <p>
+            These ideas became an important technical foundation for
+            later computer networks.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Internet Society — A Brief History of the Internet
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>1969 — ARPANET Begins</h3>
+
+        <p>
+            In 1969, ARPANET became operational with four initial
+            nodes. The first connections linked UCLA, the Stanford
+            Research Institute, UC Santa Barbara, and the University
+            of Utah.
+        </p>
+
+        <p>
+            ARPANET was designed as a research network and became an
+            important experiment in connecting computers over
+            geographically separated locations.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.darpa.mil/news/features/arpanet"
+               target="_blank"
+               rel="noopener noreferrer">
+                DARPA — ARPANET
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>1971 — Email Becomes an Important Network Application</h3>
+
+        <p>
+            Electronic mail became one of the first widely used
+            applications on computer networks. In 1971, Ray Tomlinson
+            developed an email system for ARPANET and introduced the
+            use of the @ symbol to separate a user's name from the
+            destination computer.
+        </p>
+
+        <p>
+            Email showed that computer networks could be used not only
+            for sharing computing resources, but also for communication
+            between people.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Internet Society — A Brief History of the Internet
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>1973–1974 — Internetworking and TCP</h3>
+
+        <p>
+            As different packet-switched networks were being developed,
+            researchers began working on ways to connect independent
+            networks.
+        </p>
+
+        <p>
+            Robert Kahn and Vinton Cerf worked on communication
+            protocols that could allow different networks to exchange
+            information. This work became an important part of the
+            development of TCP/IP.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Internet Society — A Brief History of the Internet
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>1977 — Demonstrating an Internet of Networks</h3>
+
+        <p>
+            In 1977, researchers demonstrated communication between
+            different packet-switched networks using the emerging
+            TCP technology.
+        </p>
+
+        <p>
+            The experiments helped show that networks using different
+            technologies could be connected through a common
+            communication architecture.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Internet Society — A Brief History of the Internet
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>1983 — TCP/IP Becomes the Standard</h3>
+
+        <p>
+            January 1, 1983 was a major milestone in Internet history.
+            ARPANET officially switched from the older Network Control
+            Protocol (NCP) to TCP/IP.
+        </p>
+
+        <p>
+            TCP/IP allowed different networks to communicate using a
+            common set of protocols. This helped establish the
+            technical foundation for the Internet as a network of
+            interconnected networks.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.darpa.mil/news/features/arpanet"
+               target="_blank"
+               rel="noopener noreferrer">
+                DARPA — ARPANET
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>1983 — The Domain Name System</h3>
+
+        <p>
+            As the number of computers connected to networks increased,
+            using numerical addresses became increasingly difficult
+            for people.
+        </p>
+
+        <p>
+            Paul Mockapetris developed the Domain Name System (DNS),
+            which provided a distributed system for associating
+            human-readable domain names with numerical network
+            addresses.
+        </p>
+
+        <p>
+            DNS became an important part of the Internet because it
+            allowed users to work with names instead of having to
+            remember numerical IP addresses.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Internet Society — A Brief History of the Internet
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>1986 — NSFNET Expands Research Networking</h3>
+
+        <p>
+            In 1986, the U.S. National Science Foundation established
+            NSFNET to connect researchers and supercomputing centers.
+        </p>
+
+        <p>
+            NSFNET became an important part of the growing Internet
+            infrastructure and helped connect universities and
+            research organizations.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.nsf.gov/impacts/internet"
+               target="_blank"
+               rel="noopener noreferrer">
+                National Science Foundation — Birth of the Commercial Internet
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>1989–1990 — The End of ARPANET</h3>
+
+        <p>
+            By the end of the 1980s, the Internet had grown beyond the
+            original ARPANET. Other networks had become part of the
+            larger system of interconnected networks.
+        </p>
+
+        <p>
+            DARPA identifies 1989 as the end of ARPANET, while the
+            Internet Society describes the network as being
+            decommissioned in 1990. The important change was that the
+            Internet was no longer dependent on ARPANET as its main
+            network.
+        </p>
+
+        <p>
+            Sources:
+            <a href="https://www.darpa.mil/news/features/arpanet"
+               target="_blank"
+               rel="noopener noreferrer">
+                DARPA
+            </a>
+            |
+            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+               target="_blank"
+               rel="noopener noreferrer">
                 Internet Society
             </a>
         </p>
     </article>
 
-    <article>
-        <h3>1969 : ARPANET</h3>
-        <p>
-            The first ARPANET message was sent between UCLA and the Stanford
-            Research Institute. ARPANET became an important early network.
-        </p>
-        <p>
-            <strong>Source:</strong>
-            <a href="https://engineering100.stanford.edu/stories/new-spaces-and-expanding-influence">
-                Stanford University
-            </a>
-        </p>
-    </article>
 
     <article>
-        <h3>1973,1974 : TCP/IP</h3>
-        <p>
-            Vint Cerf and Robert Kahn developed ideas that led to TCP/IP.
-            It allowed different networks to communicate with each other.
-        </p>
-        <p>
-            <strong>Source:</strong>
-            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet-related-networks/">
-                Internet Society
-            </a>
-        </p>
-    </article>
+        <h3>1990s — The Internet Becomes Commercial</h3>
 
-    <article>
-        <h3>1983 : TCP/IP and DNS</h3>
         <p>
-            ARPANET adopted TCP/IP, and the Domain Name System was developed.
-            These technologies became important parts of the Internet.
+            During the 1990s, Internet access expanded beyond research
+            institutions. Commercial Internet service providers began
+            offering connections to businesses and individual users.
         </p>
-        <p>
-            <strong>Source:</strong>
-            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/">
-                Internet Society
-            </a>
-        </p>
-    </article>
 
-    <article>
-        <h3>1985,1986 : NSFNET</h3>
         <p>
-            NSFNET connected research and educational institutions and helped
-            the Internet grow.
+            The retirement of the NSFNET backbone in 1995 was an
+            important part of the transition toward a commercially
+            operated Internet.
         </p>
+
         <p>
-            <strong>Source:</strong>
-            <a href="https://www.nsf.gov/impacts/internet/">
+            Source:
+            <a href="https://www.nsf.gov/impacts/internet"
+               target="_blank"
+               rel="noopener noreferrer">
                 National Science Foundation
             </a>
         </p>
     </article>
 
+
     <article>
-        <h3>1990s : Internet Expansion</h3>
+        <h3>2000s — Broadband and Wi-Fi</h3>
+
         <p>
-            During the 1990s, Internet access expanded to more organizations
-            and the general public.
+            During the 2000s, broadband Internet connections became
+            increasingly common in many countries. Broadband provided
+            faster access than traditional dial-up connections and
+            made services such as video, online gaming, and multimedia
+            more practical.
         </p>
+
         <p>
-            <strong>Source:</strong>
-            <a href="https://www.nsf.gov/impacts/internet/">
-                National Science Foundation
+            Wi-Fi also made it easier for computers and other devices
+            to connect to the Internet without a physical network
+            cable.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.itu.int/en/ITU-D/Statistics/Pages/default.aspx"
+               target="_blank"
+               rel="noopener noreferrer">
+                International Telecommunication Union
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>2007–2010s — Smartphones and Mobile Internet</h3>
+
+        <p>
+            The rapid growth of smartphones changed how people used
+            the Internet. Instead of accessing online services mainly
+            through desktop computers, users could connect through
+            mobile devices almost anywhere with network coverage.
+        </p>
+
+        <p>
+            Mobile broadband became an increasingly important part of
+            Internet access, while applications and cloud services
+            became central to everyday online activities.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.itu.int/en/ITU-D/Statistics/Pages/default.aspx"
+               target="_blank"
+               rel="noopener noreferrer">
+                International Telecommunication Union
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>2010s — Cloud Computing and Large-Scale Services</h3>
+
+        <p>
+            Cloud computing became an important part of modern Internet
+            infrastructure. Instead of relying entirely on local
+            computers, users and organizations could access storage,
+            computing resources, databases, and applications through
+            Internet-connected data centers.
+        </p>
+
+        <p>
+            Content delivery networks also became important for
+            delivering websites, videos, applications, and other
+            online content to users in different parts of the world.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.nist.gov/publications/nist-definition-cloud-computing"
+               target="_blank"
+               rel="noopener noreferrer">
+                National Institute of Standards and Technology —
+                The NIST Definition of Cloud Computing
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>2020s — Faster and More Connected Networks</h3>
+
+        <p>
+            During the 2020s, Internet infrastructure continued to
+            develop through fiber networks, 5G mobile networks,
+            cloud computing, edge computing, and the Internet of Things.
+        </p>
+
+        <p>
+            The COVID-19 pandemic also highlighted how important
+            Internet connectivity had become for education, work,
+            communication, healthcare, and access to services.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/"
+               target="_blank"
+               rel="noopener noreferrer">
+                ITU — Facts and Figures 2025
+            </a>
+        </p>
+    </article>
+
+
+    <article>
+        <h3>2025–Today — A Global Network</h3>
+
+        <p>
+            Today, the Internet connects billions of people and a very
+            large number of computers, smartphones, servers, sensors,
+            and other devices.
+        </p>
+
+        <p>
+            According to the International Telecommunication Union,
+            around 6 billion people were using the Internet in 2025,
+            representing approximately 74 percent of the world's
+            population.
+        </p>
+
+        <p>
+            At the same time, about 2.2 billion people remained offline.
+            This means that the development of the Internet is not only
+            about making networks faster, but also about improving
+            availability, affordability, quality, and digital skills.
+        </p>
+
+        <p>
+            Modern Internet development also includes technologies such
+            as 5G, IPv6, cloud computing, edge computing, Internet of
+            Things devices, content delivery networks, and increasingly
+            distributed online services.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/"
+               target="_blank"
+               rel="noopener noreferrer">
+                International Telecommunication Union — Facts and Figures 2025
             </a>
         </p>
     </article>
 
 </section>
 
-<section>
+
+<section id="technologies">
+
     <h2>Key Technologies</h2>
 
     <article>
         <h3>Packet Switching</h3>
+
         <p>
-            Information is divided into small packets that travel through
-            a network.
+            Packet switching is a method of sending data by dividing
+            information into smaller packets. Each packet contains
+            information that helps the network deliver it to its
+            destination.
+        </p>
+
+        <p>
+            Packet switching was an important foundation for ARPANET
+            and later Internet networks because it allowed network
+            resources to be shared between different communications.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Internet Society
+            </a>
         </p>
     </article>
+
 
     <article>
         <h3>TCP/IP</h3>
-        <p>
-            A group of protocols that allows computers and networks to
-            communicate.
-        </p>
-    </article>
 
-    <article>
-        <h3>DNS</h3>
         <p>
-            DNS connects easy-to-read domain names with Internet addresses.
+            TCP/IP is a family of communication protocols that allows
+            different networks and devices to exchange information.
         </p>
-    </article>
-</section>
 
-<section>
-    <h2>References</h2>
-    <ul>
-        <li>
-            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/">
+        <p>
+            IP provides addressing and routing between networks, while
+            TCP provides reliable and ordered delivery of data when
+            applications require it.
+        </p>
+
+        <p>
+            The adoption of TCP/IP by ARPANET in 1983 was an important
+            step toward the Internet architecture used today.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+               target="_blank"
+               rel="noopener noreferrer">
                 Internet Society
             </a>
-        </li>
-        <li>
-            <a href="https://engineering100.stanford.edu/stories/new-spaces-and-expanding-influence">
-                Stanford University
+        </p>
+    </article>
+
+
+    <article>
+        <h3>Domain Name System (DNS)</h3>
+
+        <p>
+            The Domain Name System allows people to use names such as
+            example.com instead of having to remember numerical IP
+            addresses.
+        </p>
+
+        <p>
+            DNS uses a distributed system of servers and records to
+            help translate domain names into the network addresses
+            needed to reach Internet resources.
+        </p>
+
+        <p>
+            DNS became increasingly important as the number of Internet
+            users, computers, networks, and services grew.
+        </p>
+
+        <p>
+            Source:
+            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Internet Society
             </a>
-        </li>
-        <li>
-            <a href="https://www.nsf.gov/impacts/internet/">
-                National Science Foundation
-            </a>
-        </li>
-    </ul>
+        </p>
+    </article>
+
 </section>
 
-</main>
 
-<footer>
-    <p>Created for educational purposes — GIN446.</p>
-</footer>
+<section id="references">
 
-</body>
-</html>
+    <h2>References</h2>
+
+    <ul>
+
+        <li>
+            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Internet Society — A Brief History of the Internet
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.darpa.mil/news/features/arpanet"
+               target="_blank"
+               rel="noopener noreferrer">
+                DARPA — ARPANET
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.nsf.gov/impacts/internet"
+               target="_blank"
+               rel="noopener noreferrer">
+                National Science Foundation — Birth of the Commercial Internet
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.computerhistory.org/internethistory/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Computer History Museum — Internet History
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.nist.gov/publications/nist-definition-cloud-computing"
+               target="_blank"
+               rel="noopener noreferrer">
+                NIST — The NIST Definition of Cloud Computing
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.itu.int/itu-d/reports/statistics/facts-figures-2025/"
+               target="_blank"
+               rel="noopener noreferrer">
+                International Telecommunication Union — Facts and Figures 2025
+            </a>
+        </li>
+
+    </ul>
+
+</section>
+
+
+{% endblock %}
+
