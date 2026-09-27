@@ -8,8 +8,10 @@
         {% block title %}Web Programming Portfolio{% endblock %}
     </title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+     <link rel="stylesheet"
+      href="{{ url_for('static', filename='my_styles.css') }}">
+
+{% block head %}{% endblock %}     
 </head>
 
 <body>
@@ -51,6 +53,12 @@
         <li>
             <a href="{{ url_for('web_history_ai') }}">
                 Web History AI
+            </a>
+        </li>
+
+        <li>
+            <a href="{{ url_for('submit_profile') }}">
+                Engineering Student Profile
             </a>
         </li>
     </ul>

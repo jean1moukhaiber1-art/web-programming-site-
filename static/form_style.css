@@ -1,0 +1,394 @@
+/* =========================================================
+   GIN446 - Engineering Student Profile
+   Creative Modern Form Design
+   ========================================================= */
+
+/* ---------- Page background ---------- */
+
+main {
+    padding: 40px 20px;
+}
+
+body {
+    background:
+        radial-gradient(circle at top left, rgba(25, 118, 210, 0.15), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255, 107, 107, 0.12), transparent 35%);
+}
+
+
+/* ---------- Main form card ---------- */
+
+.profile-form {
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 42, 67, 0.15),
+        0 5px 15px rgba(15, 42, 67, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* ---------- Form title ---------- */
+
+.profile-form h1,
+.profile-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+
+    font-size: 32px;
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #0F2A43,
+        #1976D2
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profile-form > p {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 35px;
+}
+
+
+/* ---------- Section cards ---------- */
+
+.profile-form fieldset {
+    border: none;
+    margin: 0 0 25px;
+    padding: 25px;
+
+    background: #f8fafc;
+
+    border-radius: 16px;
+
+    border-left: 5px solid #1976D2;
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.profile-form fieldset:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(15, 42, 67, 0.08);
+}
+
+
+/* ---------- Section titles ---------- */
+
+.profile-form legend {
+    padding: 0 10px;
+
+    color: #0F2A43;
+
+    font-size: 19px;
+    font-weight: 800;
+}
+
+
+/* ---------- Labels ---------- */
+
+.profile-form label {
+    display: block;
+
+    margin-top: 18px;
+    margin-bottom: 7px;
+
+    color: #243b53;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ---------- Text inputs ---------- */
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="tel"],
+.profile-form input[type="date"],
+.profile-form input[type="url"],
+.profile-form input[type="number"],
+.profile-form input[type="month"],
+.profile-form input[type="time"],
+.profile-form input[type="color"],
+.profile-form select,
+.profile-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    background: white;
+
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+
+    color: #1e293b;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* ---------- Input hover ---------- */
+
+.profile-form input:hover,
+.profile-form select:hover,
+.profile-form textarea:hover {
+    border-color: #94a3b8;
+}
+
+
+/* ---------- Input focus ---------- */
+
+.profile-form input:focus,
+.profile-form select:focus,
+.profile-form textarea:focus {
+    outline: none;
+
+    border-color: #1976D2;
+
+    box-shadow:
+        0 0 0 4px rgba(25, 118, 210, 0.12);
+
+    transform: translateY(-1px);
+}
+
+
+/* ---------- Placeholder ---------- */
+
+.profile-form input::placeholder,
+.profile-form textarea::placeholder {
+    color: #94a3b8;
+}
+
+
+/* ---------- Textarea ---------- */
+
+.profile-form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+
+/* ---------- Select ---------- */
+
+.profile-form select {
+    cursor: pointer;
+}
+
+
+/* ---------- Checkboxes and radio buttons ---------- */
+
+.profile-form input[type="checkbox"],
+.profile-form input[type="radio"] {
+    width: auto;
+
+    margin-right: 8px;
+
+    accent-color: #1976D2;
+
+    transform: scale(1.1);
+}
+
+
+/* Keep checkbox/radio labels compact */
+
+.profile-form input[type="checkbox"] + label,
+.profile-form input[type="radio"] + label {
+    display: inline-block;
+    margin: 8px 15px 8px 0;
+
+    font-weight: 500;
+}
+
+
+/* ---------- Color picker ---------- */
+
+.profile-form input[type="color"] {
+    width: 70px;
+    height: 45px;
+
+    padding: 4px;
+
+    cursor: pointer;
+}
+
+
+/* ---------- Required fields ---------- */
+
+.profile-form input:required,
+.profile-form select:required,
+.profile-form textarea:required {
+    border-left: 3px solid #1976D2;
+}
+
+
+/* ---------- Submit button ---------- */
+
+.profile-form button[type="submit"],
+.profile-form input[type="submit"] {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 30px;
+    padding: 15px 25px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #0F2A43,
+        #1976D2
+    );
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(25, 118, 210, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* ---------- Button hover ---------- */
+
+.profile-form button[type="submit"]:hover,
+.profile-form input[type="submit"]:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(25, 118, 210, 0.35);
+}
+
+
+/* ---------- Button click ---------- */
+
+.profile-form button[type="submit"]:active,
+.profile-form input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+
+/* ---------- Validation ---------- */
+
+.profile-form input:invalid:not(:placeholder-shown),
+.profile-form select:invalid,
+.profile-form textarea:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+
+/* ---------- Success-looking valid inputs ---------- */
+
+.profile-form input:valid:not(:placeholder-shown),
+.profile-form textarea:valid:not(:placeholder-shown) {
+    border-color: #cbd5e1;
+}
+
+
+/* ---------- Horizontal groups ---------- */
+
+.profile-form .form-row {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ---------- Small helper text ---------- */
+
+.profile-form small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* ---------- Responsive design ---------- */
+
+@media (max-width: 700px) {
+
+    .profile-form {
+        margin: 15px auto;
+        padding: 22px;
+
+        border-radius: 18px;
+    }
+
+    .profile-form h1,
+    .profile-form h2 {
+        font-size: 25px;
+    }
+
+    .profile-form fieldset {
+        padding: 18px;
+    }
+
+    .profile-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+}
+
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 450px) {
+
+    main {
+        padding: 20px 10px;
+    }
+
+    .profile-form {
+        padding: 17px;
+    }
+
+    .profile-form fieldset {
+        padding: 15px;
+    }
+
+    .profile-form button[type="submit"],
+    .profile-form input[type="submit"] {
+        font-size: 15px;
+        padding: 13px;
+    }
+
+}
