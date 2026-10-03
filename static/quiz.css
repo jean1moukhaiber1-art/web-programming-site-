@@ -1,0 +1,375 @@
+/* ==========================================================
+   quiz.css  (Level 2: AI-assisted, human-audited)
+   Mobile-first: base styles are for small screens, and
+   min-width media queries at the bottom enlarge the layout.
+   ========================================================== */
+
+/* ---------- 1. Design tokens (change colors here only) ---------- */
+:root {
+  --bg-deep: #0b1b3a;
+  --bg-mid: #14337a;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --selected-bg: #dbeafe;      /* white-blue fill for the chosen answer */
+  --selected-border: #3b82f6;
+  --choice-bg: #f1f5f9;
+  --text: #0f172a;
+  --muted: #64748b;
+  --correct: #15803d;
+  --correct-bg: #dcfce7;
+  --incorrect: #b91c1c;
+  --incorrect-bg: #fee2e2;
+  --radius: 14px;
+  --shadow: 0 20px 50px rgba(2, 8, 30, 0.35);
+  --ease: 0.25s ease;
+}
+
+/* ---------- 2. Page + moving background ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color: var(--text);
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-deep), var(--bg-mid), #1e4fd1);
+  background-size: 300% 300%;
+  animation: gradientShift 18s ease infinite;
+  overflow-x: hidden;
+}
+
+/* Two soft glowing blobs that drift behind the card */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+body::before {
+  width: 280px;
+  height: 280px;
+  top: -80px;
+  left: -80px;
+  background: #60a5fa;
+  animation: floatOne 14s ease-in-out infinite alternate;
+}
+
+body::after {
+  width: 340px;
+  height: 340px;
+  bottom: -120px;
+  right: -100px;
+  background: #818cf8;
+  animation: floatTwo 17s ease-in-out infinite alternate;
+}
+
+/* ---------- 3. Card container ---------- */
+.container {
+  position: relative;
+  z-index: 1;                         /* keeps the card above the blobs */
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: cardIn 0.7s ease both;   /* the one entrance animation */
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0 0 20px;
+  color: var(--bg-deep);
+}
+
+/* ---------- 4. Progress (text + visual bar) ---------- */
+#progress {
+  font-weight: bold;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Track + fill: add these two elements in the HTML (see notes) */
+.progress-track {
+  width: 100%;
+  height: 10px;
+  margin-top: 8px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;                            /* JS sets the width, e.g. "30%" */
+  background: linear-gradient(90deg, #60a5fa, var(--primary));
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+/* ---------- 5. Question ---------- */
+#questionText {
+  margin-top: 25px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.45;
+  animation: fadeIn 0.4s ease both;
+}
+
+/* ---------- 6. Answer choices (clickable filled buttons) ---------- */
+.choice {
+  display: block;
+  margin: 12px 0;
+  padding: 14px 16px;
+  background-color: var(--choice-bg);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  line-height: 1.4;
+  transition: background-color var(--ease), border-color var(--ease),
+              transform var(--ease), box-shadow var(--ease);
+  animation: fadeIn 0.4s ease both;
+}
+
+.choice:hover {
+  background-color: #e0ecff;
+  border-color: #bfdbfe;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.15);
+}
+
+/* Selected answer: white-blue fill. Works with a JS class OR a checked radio */
+.choice.selected,
+.choice:has(input:checked) {
+  background-color: var(--selected-bg);
+  border-color: var(--selected-border);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.22);
+  font-weight: 600;
+}
+
+.choice input {
+  margin-right: 10px;
+  accent-color: var(--primary);
+}
+
+/* ---------- 7. Buttons ---------- */
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color var(--ease), transform var(--ease),
+              box-shadow var(--ease);
+}
+
+button:hover:not(:disabled) {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* ---------- 8. Navigation + Submit (equal emphasis) ---------- */
+.navigation {
+  display: flex;
+  flex-direction: column;              /* stacked on phones */
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.navigation button {
+  width: 100%;
+}
+
+.submit {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* ---------- 9. Results panel (visually different from the quiz) ---------- */
+#resultsPanel {
+  display: none;                       /* JS switches this on */
+  margin-top: 10px;
+  padding: 24px 18px;
+  background: linear-gradient(160deg, #0f2a66, #1d4ed8);
+  color: #fff;
+  border-radius: var(--radius);
+  text-align: center;
+  animation: popIn 0.6s ease both;
+}
+
+#resultsPanel h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+/* Optional big score display, e.g. <div class="score-banner">8 / 10</div> */
+.score-banner {
+  display: inline-block;
+  margin: 10px 0 20px;
+  padding: 10px 28px;
+  font-size: 2rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+}
+
+#correction {
+  white-space: pre-wrap;
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Correct / incorrect: color AND an icon, so color is never the only signal */
+.correct,
+.incorrect {
+  display: block;
+  margin: 10px 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border-left: 6px solid;
+}
+
+.correct {
+  background: var(--correct-bg);
+  color: var(--correct);
+  border-color: var(--correct);
+}
+
+.incorrect {
+  background: var(--incorrect-bg);
+  color: var(--incorrect);
+  border-color: var(--incorrect);
+}
+
+.correct::before {
+  content: "\2713  ";                  /* check mark */
+  font-weight: 800;
+}
+
+.incorrect::before {
+  content: "\2717  ";                  /* cross mark */
+  font-weight: 800;
+}
+
+/* ---------- 10. Accessibility ---------- */
+button:focus-visible,
+.choice:focus-within,
+.choice:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* ---------- 11. Animations ---------- */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatOne {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(120px, 90px) scale(1.25); }
+}
+
+@keyframes floatTwo {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-130px, -80px) scale(1.2); }
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Respect users who ask their system for less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- 12. Breakpoints (min-width, mobile-first) ---------- */
+
+/* Large phones / small tablets */
+@media (min-width: 600px) {
+  .container {
+    margin: 40px auto;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  #questionText {
+    font-size: 1.3rem;
+  }
+
+  .navigation {
+    flex-direction: row;               /* Previous / Next side by side */
+  }
+
+  .navigation button {
+    flex: 1;                           /* equal width: both buttons equal emphasis */
+  }
+
+  #resultsPanel {
+    padding: 32px 28px;
+  }
+}
+
+/* Laptops and larger */
+@media (min-width: 900px) {
+  .container {
+    margin: 60px auto;
+    padding: 40px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .score-banner {
+    font-size: 2.6rem;
+  }
+}

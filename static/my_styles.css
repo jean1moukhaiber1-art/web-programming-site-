@@ -1,12 +1,15 @@
 /* =========================================================
    GIN446 Web Programming Portfolio
-   Elegant Tech — Modern Vanilla CSS
+   Elegant Tech, Animated Edition
+   Mobile-first: base styles are for phones; min-width
+   media queries at the bottom enlarge the layout.
    ========================================================= */
 
 :root {
     /* Colors */
     --color-navy: #0F2A43;
     --color-blue: #1976D2;
+    --color-blue-bright: #3B82F6;
     --color-blue-light: #EAF4FF;
     --color-white: #FFFFFF;
     --color-background: #F7FAFC;
@@ -34,12 +37,13 @@
     /* Radii */
     --radius-sm: 8px;
     --radius-md: 10px;
-    --radius-lg: 12px;
+    --radius-lg: 14px;
 
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(15, 42, 67, 0.08);
     --shadow-md: 0 8px 24px rgba(15, 42, 67, 0.12);
-    --shadow-lg: 0 14px 35px rgba(15, 42, 67, 0.14);
+    --shadow-lg: 0 14px 35px rgba(15, 42, 67, 0.18);
+    --glow-blue: 0 8px 22px rgba(25, 118, 210, 0.28);
 
     /* Transitions */
     --transition: 0.25s ease;
@@ -47,7 +51,7 @@
 
 
 /* =========================================================
-   GLOBAL
+   GLOBAL + LIVING BACKGROUND
    ========================================================= */
 
 * {
@@ -61,13 +65,63 @@ html {
 body {
     margin: 0;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 
-    background: var(--color-background);
+    /* Slowly shifting pale-blue gradient */
+    background: linear-gradient(
+        135deg,
+        #F7FAFC,
+        #E3F0FF,
+        #F4F8FF,
+        #FFE9E9
+    );
+    background-size: 300% 300%;
+    animation: gradientShift 20s ease infinite;
+
     color: var(--color-text);
-
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.7;
+}
+
+/* Two blurred blobs drifting behind the content */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+body::before {
+    width: 260px;
+    height: 260px;
+    top: -80px;
+    left: -80px;
+    background: #7DB7FF;
+    animation: floatOne 16s ease-in-out infinite alternate;
+}
+
+body::after {
+    width: 300px;
+    height: 300px;
+    bottom: -100px;
+    right: -90px;
+    background: #FFB3B3;
+    animation: floatTwo 19s ease-in-out infinite alternate;
+}
+
+/* Keep real content above the blobs */
+header,
+nav,
+main,
+footer {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -131,39 +185,62 @@ a:hover {
 }
 
 a:focus-visible {
-    outline: 3px solid rgba(255, 107, 107, 0.35);
+    outline: 3px solid rgba(255, 107, 107, 0.45);
     outline-offset: 3px;
     border-radius: 4px;
 }
 
 
 /* =========================================================
-   HEADER
+   HEADER  (mobile: stacked column)
    ========================================================= */
 
 header {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-lg);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
 
-    padding: var(--space-lg) max(5%, var(--space-md));
+    padding: var(--space-md);
 
-    background: var(--color-white);
-    border-bottom: 4px solid var(--color-blue);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
 
     box-shadow: var(--shadow-sm);
+
+    animation: slideDown 0.7s ease both;
+}
+
+/* Animated gradient line replaces the static bottom border */
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        var(--color-blue),
+        var(--color-blue-bright),
+        var(--color-accent),
+        var(--color-blue)
+    );
+    background-size: 300% 100%;
+    animation: lineFlow 6s linear infinite;
 }
 
 header h1 {
     margin: 0;
+    font-size: 1.8rem;
 }
 
 header img {
     display: block;
 
-    width: 250px;
-    height: 250px;
+    width: 80px;
+    height: 80px;
 
     object-fit: contain;
     flex-shrink: 0;
@@ -174,25 +251,38 @@ header img {
     border: 2px solid var(--color-border);
     border-radius: var(--radius-lg);
 
+    /* Gentle idle float */
+    animation: bob 5s ease-in-out infinite;
+
     transition:
         transform var(--transition),
-        box-shadow var(--transition);
+        box-shadow var(--transition),
+        border-color var(--transition);
 }
 
 header img:hover {
-    transform: translateY(-3px);
+    animation-play-state: paused;
+    transform: translateY(-3px) rotate(-2deg);
+    border-color: var(--color-blue);
     box-shadow: var(--shadow-md);
 }
 
 
 /* =========================================================
-   NAVIGATION — FLEXBOX
+   NAVIGATION  (mobile: two items per row)
    ========================================================= */
 
 nav {
-    padding: var(--space-md) max(5%, var(--space-md));
+    padding: var(--space-md);
 
-    background: var(--color-navy);
+    background: linear-gradient(
+        120deg,
+        var(--color-navy),
+        #163B5E,
+        var(--color-navy)
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 14s ease infinite;
 }
 
 nav h2 {
@@ -204,18 +294,10 @@ nav h2 {
     letter-spacing: 0.08em;
 }
 
-/*
-   Flexbox navigation:
-   - Items appear in a row
-   - Space is distributed evenly
-   - Items are vertically centered
-   - Menu wraps automatically on smaller screens
-*/
-
 nav ul {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
 
     gap: var(--space-xs);
@@ -228,13 +310,16 @@ nav ul {
 }
 
 nav li {
-    flex: 1 1 auto;
+    flex: 1 1 45%;
     margin: 0;
     text-align: center;
 }
 
 nav a {
+    position: relative;
     display: block;
+    width: 100%;
+    overflow: hidden;
 
     padding: 10px 16px;
 
@@ -248,6 +333,22 @@ nav a {
         box-shadow var(--transition);
 }
 
+/* Coral underline that grows from the center on hover */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    width: 60%;
+    height: 3px;
+
+    background: var(--color-accent);
+    border-radius: 3px;
+
+    transform: translateX(-50%) scaleX(0);
+    transition: transform var(--transition);
+}
+
 nav a:hover {
     color: var(--color-navy);
     background: var(--color-white);
@@ -256,75 +357,95 @@ nav a:hover {
     box-shadow: var(--shadow-sm);
 }
 
+nav a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
 
 /* =========================================================
    MAIN CONTENT
    ========================================================= */
 
 main {
-    width: min(var(--content-width), 90%);
+    width: 92%;
     min-height: 55vh;
 
-    margin: var(--space-xl) auto;
+    margin: var(--space-lg) auto;
 }
 
 
 /* =========================================================
-   PAGE SECTIONS
+   PAGE SECTIONS  (mobile: tighter padding)
    ========================================================= */
 
 main section {
-    margin-bottom: var(--space-xl);
-    padding: var(--space-xl);
+    position: relative;
+    overflow: hidden;
 
-    background: var(--color-white);
+    margin-bottom: var(--space-xl);
+    padding: var(--space-lg);
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
 
     border: 1px solid var(--color-border);
     border-left: 5px solid var(--color-blue);
-
     border-radius: var(--radius-lg);
 
     box-shadow: var(--shadow-sm);
 
+    animation: riseIn 0.7s ease both;
+
     transition:
         box-shadow var(--transition),
-        transform var(--transition);
+        transform var(--transition),
+        border-left-color var(--transition);
 }
+
+/* Sections enter one after another */
+main section:nth-of-type(2) { animation-delay: 0.12s; }
+main section:nth-of-type(3) { animation-delay: 0.24s; }
+main section:nth-of-type(4) { animation-delay: 0.36s; }
 
 main section:hover {
     box-shadow: var(--shadow-md);
+    border-left-color: var(--color-accent);
 }
 
 main section h2 {
+    position: relative;
+
     margin-bottom: var(--space-lg);
     padding-bottom: var(--space-sm);
 
     border-bottom: 2px solid var(--color-blue-light);
 }
 
+/* Short blue bar that stretches when the section is hovered */
+main section h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 48px;
+    height: 2px;
+
+    background: var(--color-blue);
+    transition: width 0.4s ease;
+}
+
+main section:hover h2::after {
+    width: 140px;
+}
+
 
 /* =========================================================
-   WEEKLY WORK — RESPONSIVE CSS GRID
+   WEEKLY WORK  (mobile: one column grid)
    ========================================================= */
-
-/*
-   The current HTML has no .weekly-list class.
-   Therefore this targets the existing <ul> inside <section>.
-
-   The grid automatically creates:
-   - multiple columns on large screens
-   - fewer columns on medium screens
-   - one column on narrow screens
-*/
 
 main section ul {
     display: grid;
-
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(240px, 1fr)
-    );
-
+    grid-template-columns: 1fr;
     gap: var(--space-md);
 
     margin: 0;
@@ -334,6 +455,8 @@ main section ul {
 }
 
 main section li {
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
 
@@ -346,6 +469,9 @@ main section li {
     border: 1px solid transparent;
     border-radius: var(--radius-md);
 
+    /* Cards pop in one by one */
+    animation: popIn 0.5s ease both;
+
     transition:
         transform var(--transition),
         border-color var(--transition),
@@ -353,16 +479,53 @@ main section li {
         box-shadow var(--transition);
 }
 
+main section li:nth-child(1)  { animation-delay: 0.10s; }
+main section li:nth-child(2)  { animation-delay: 0.18s; }
+main section li:nth-child(3)  { animation-delay: 0.26s; }
+main section li:nth-child(4)  { animation-delay: 0.34s; }
+main section li:nth-child(5)  { animation-delay: 0.42s; }
+main section li:nth-child(6)  { animation-delay: 0.50s; }
+main section li:nth-child(7)  { animation-delay: 0.58s; }
+main section li:nth-child(8)  { animation-delay: 0.66s; }
+main section li:nth-child(9)  { animation-delay: 0.74s; }
+main section li:nth-child(10) { animation-delay: 0.82s; }
+main section li:nth-child(11) { animation-delay: 0.90s; }
+main section li:nth-child(12) { animation-delay: 0.98s; }
+
+/* Light sweep that crosses a card on hover */
+main section li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(
+        100deg,
+        transparent,
+        rgba(255, 255, 255, 0.75),
+        transparent
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+}
+
 main section li:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) scale(1.02);
 
     background: var(--color-white);
     border-color: var(--color-blue);
 
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--glow-blue);
+}
+
+main section li:hover::before {
+    animation: sweep 0.8s ease;
 }
 
 main section li a {
+    position: relative;
     display: block;
     width: 100%;
 }
@@ -373,15 +536,33 @@ main section li a {
    ========================================================= */
 
 footer {
+    position: relative;
+
     margin-top: var(--space-xxl);
-    padding: var(--space-xl) max(5%, var(--space-md));
+    padding: var(--space-lg) var(--space-md);
 
     color: var(--color-white);
     background: var(--color-navy);
 
-    border-top: 4px solid var(--color-accent);
-
     text-align: center;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        var(--color-accent),
+        var(--color-blue-bright),
+        var(--color-accent)
+    );
+    background-size: 300% 100%;
+    animation: lineFlow 6s linear infinite reverse;
 }
 
 footer p {
@@ -399,78 +580,149 @@ footer p:last-child {
 
 
 /* =========================================================
-   RESPONSIVE DESIGN
+   KEYFRAMES
    ========================================================= */
 
-@media (max-width: 700px) {
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-    /* Header */
+@keyframes floatOne {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(120px, 90px) scale(1.25); }
+}
+
+@keyframes floatTwo {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(-130px, -80px) scale(1.2); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes riseIn {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+}
+
+@keyframes lineFlow {
+    from { background-position: 0% 0; }
+    to   { background-position: 300% 0; }
+}
+
+@keyframes sweep {
+    from { left: -80%; }
+    to   { left: 130%; }
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN: MOBILE-FIRST (min-width only)
+   ========================================================= */
+
+/* Large phones and small tablets */
+@media (min-width: 600px) {
 
     header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-lg);
 
-        padding: var(--space-md);
-    }
-
-    header h1 {
-        font-size: 1.8rem;
+        padding: var(--space-lg) max(5%, var(--space-md));
     }
 
     header img {
-        width: 80px;
-        height: 80px;
+        width: 160px;
+        height: 160px;
     }
 
-
-    /* Navigation */
-
     nav {
-        padding: var(--space-md);
+        padding: var(--space-md) max(5%, var(--space-md));
     }
 
     nav ul {
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     nav li {
-        flex: 1 1 45%;
+        flex: 1 1 auto;
+        margin: 0;
     }
 
     nav a {
-        width: 100%;
+        width: auto;
     }
 
-
-    /* Main */
-
     main {
-        width: 92%;
-        margin: var(--space-lg) auto;
+        width: min(var(--content-width), 90%);
+        margin: var(--space-xl) auto;
     }
 
     main section {
-        padding: var(--space-lg);
+        padding: var(--space-xl);
     }
 
-
-    /* Weekly Work */
-
+    /* Weekly work: columns appear automatically */
     main section ul {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
-
-
-    /* Footer */
 
     footer {
-        padding: var(--space-lg) var(--space-md);
+        padding: var(--space-xl) max(5%, var(--space-md));
+    }
+}
+
+/* Laptops and desktops */
+@media (min-width: 900px) {
+
+    header h1 {
+        font-size: clamp(1.8rem, 4vw, 2.7rem);
+    }
+
+    header img {
+        width: 250px;
+        height: 250px;
+    }
+
+    body::before {
+        width: 360px;
+        height: 360px;
+    }
+
+    body::after {
+        width: 420px;
+        height: 420px;
+    }
+}
+
+/* Hover effects only on devices that can hover (not touch screens) */
+@media (hover: none) {
+
+    main section li:hover,
+    nav a:hover,
+    header img:hover {
+        transform: none;
     }
 }
 
 
 /* =========================================================
-   ACCESSIBILITY — REDUCED MOTION
+   ACCESSIBILITY: REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
