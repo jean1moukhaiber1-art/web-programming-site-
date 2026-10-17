@@ -20,7 +20,7 @@
         experience, and Final Year Project preferences.
     </p>
 
-   <form class="profile-form" action="{{ url_for('submit_profile') }}" method="post">
+   <form id="profileForm" class="profile-form" action="{{ url_for('submit_profile') }}" method="post">
 
         <!-- 1. Personal Information -->
         <fieldset>
@@ -506,7 +506,24 @@
 
     </form>
 
+    <section id="reviewPanel" class="hidden" aria-labelledby="reviewTitle">
+    <h2 id="reviewTitle">Review Your Profile</h2>
+
+    <p>Please check your information before submitting.</p>
+
+    <div id="reviewContent"></div>
+
+    <button type="button" id="editButton">Edit</button>
+
+    <button type="button" id="confirmButton">
+        Confirm &amp; Submit
+    </button>
+</section>
+
 </main>
+
+<script src="{{ url_for('static', filename='js/form-validation.js') }}"
+        defer></script>
 
 {% endblock %}
 

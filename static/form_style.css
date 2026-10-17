@@ -392,3 +392,7 @@ body {
     }
 
 }
+
+.hidden {
+    display: none;
+}
