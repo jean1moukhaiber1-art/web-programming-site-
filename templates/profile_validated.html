@@ -1,0 +1,155 @@
+
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='form_style.css') }}">
+{% endblock %}
+
+{% block title %}Validated Student Profile{% endblock %}
+
+{% block content %}
+
+<main class="profile-form">
+
+    <h1>Student Profile Submitted Successfully</h1>
+
+    <p>
+        Your information passed server-side validation.
+        Here is your submitted profile.
+    </p>
+
+    <fieldset>
+        <legend>1. Personal Information</legend>
+
+        <p><strong>Student ID:</strong>
+            {{ data.get('student_id', '') }}</p>
+
+        <p><strong>Full Name:</strong>
+            {{ data.get('fullname', '') }}</p>
+
+        <p><strong>Email:</strong>
+            {{ data.get('email', '') }}</p>
+
+        <p><strong>Mobile Number:</strong>
+            {{ data.get('phone', '') or 'Not provided' }}</p>
+
+        <p><strong>Date of Birth:</strong>
+            {{ data.get('birthdate', '') or 'Not provided' }}</p>
+
+        <p><strong>GitHub:</strong>
+            {{ data.get('portfolio', '') or 'Not provided' }}</p>
+
+        <p><strong>GIN446 Website:</strong>
+            {{ data.get('gin446', '') or 'Not provided' }}</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>2. Academic Information</legend>
+
+        <p><strong>Major:</strong>
+            {{ data.get('major', '') }}</p>
+
+        <p><strong>GPA:</strong>
+            {{ data.get('gpa', '') or 'Not provided' }}</p>
+
+        <p><strong>Credits Completed:</strong>
+            {{ data.get('credits', '') or 'Not provided' }}</p>
+
+        <p><strong>Graduation Season:</strong>
+            {{ data.get('graduation', '')|title }}</p>
+
+        <p><strong>Graduation Month:</strong>
+            {{ data.get('graduation_month', '') or 'Not provided' }}</p>
+
+        <p><strong>Internship Completed:</strong>
+            {{ data.get('internship_completed', '')|title or 'Not provided' }}</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>3. Technical Background</legend>
+
+        <p><strong>Programming Language:</strong>
+            {{ data.get('language', '') or 'Not provided' }}</p>
+
+        <p><strong>Technical Skills:</strong></p>
+
+        {% if skills %}
+            <ul>
+                {% for skill in skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No skills selected.</p>
+        {% endif %}
+
+        <p><strong>Engineering Software:</strong></p>
+
+        {% if software %}
+            <ul>
+                {% for item in software %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No software selected.</p>
+        {% endif %}
+    </fieldset>
+
+    <fieldset>
+        <legend>4. Final Year Project Preferences</legend>
+
+        <p><strong>Project Title:</strong>
+            {{ data.get('project_title', '') or 'Not provided' }}</p>
+
+        <p><strong>Project Area:</strong>
+            {{ data.get('project_area', '') or 'Not provided' }}</p>
+
+        <p><strong>Project Description:</strong>
+            {{ data.get('description', '') or 'Not provided' }}</p>
+
+        <p><strong>Preferred Team Size:</strong>
+            {{ data.get('team_size', '') or 'Not provided' }}</p>
+
+        <p><strong>Project Color:</strong>
+            <spanborder: 1px solid #333; vertical-align:middle;">
+                style="display:inline-block; width:20px; height:20px;
+                       background-color:{{ data.get('project_color', '#336699') }};
+                       border: 1px solid #333; vertical-align:middle;">
+            </span>
+            {{ data.get('project_color', '#336699') }}
+        </p>
+
+        <p><strong>Meeting Date:</strong>
+            {{ data.get('meeting_date', '') or 'Not provided' }}</p>
+
+        <p><strong>Meeting Time:</strong>
+            {{ data.get('meeting_time', '') or 'Not provided' }}</p>
+    </fieldset>
+
+    <p>
+        <strong>Confirmation:</strong>
+        Information confirmed.
+    </p>
+
+    <p>
+        <strong>Form Version:</strong>
+        {{ data.get('form_version', '') or 'Not provided' }}
+    </p>
+
+    <p>
+        <a href="{{ url_for('profile_validated') }}">
+            Return to the validated form
+        </a>
+    </p>
+
+    <p>
+        <a href="{{ url_for('home') }}">
+            Return to the homepage
+        </a>
+    </p>
+
+</main>
+
+{% endblock %}
